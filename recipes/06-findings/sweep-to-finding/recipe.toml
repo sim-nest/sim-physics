@@ -1,0 +1,8 @@
+id = "sweep-to-finding"
+title = "Preserve a surprising sweep result as an immutable finding"
+codec = "rust"
+setup = "src/main.rs"
+purpose = "README.md"
+order = 70
+tags = ["physics", "finding", "history", "evidence"]
+requires = ["sim-lib-physics-findings"]

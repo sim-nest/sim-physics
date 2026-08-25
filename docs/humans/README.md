@@ -23,6 +23,7 @@ This generated lane consumes `docs/generated/sim-index-fragment.sx`. Global inde
 | `feature/sim-physics/certified-orthogonal-refinement` | `crate/sim-lib-physics-proof` | 1 | Refine independent numerical and model axes, retain signed comparisons, and issue definite threshold verdicts only from certified enclosures. |
 | `feature/sim-physics/no-energy-selection` | `crate/sim-lib-physics-influence` | 1 | Refuse selection, ranking, sizing, and control inputs influenced by energy-derived observations, including laundering through dimension changes and opaque code. |
 | `feature/sim-physics/immutable-placement-studies` | `crate/sim-lib-physics-study` | 1 | Review semantic sweep plans before execution and retain sampling, partition, placement, partial-outcome, replay, provider-envelope, and explicit coverage-gap evidence. |
+| `feature/sim-physics/immutable-finding-history` | `crate/sim-lib-physics-findings` | 1 | Store surprising observations and every successor by content identity while preserving concurrent explanations and rebuilding disposable query projections. |
 
 ## Surfaces
 
@@ -33,6 +34,7 @@ This generated lane consumes `docs/generated/sim-index-fragment.sx`. Global inde
 | `cli/physics-placement-sweep-recipe` | `cli` | `crate/physics-placement-sweep-recipe` |
 | `cli/physics-refused-selection-recipe` | `cli` | `crate/physics-refused-selection-recipe` |
 | `cli/physics-stored-energy-recipe` | `cli` | `crate/physics-stored-energy-recipe` |
+| `cli/physics-sweep-to-finding-recipe` | `cli` | `crate/physics-sweep-to-finding-recipe` |
 | `cli/switched-two-port` | `cli` | `crate/switched-two-port` |
 | `cli/xtask` | `cli` | `crate/xtask` |
 | `docs/sim-physics/generated` | `docs` | `doc-set/sim-physics/generated` |
@@ -63,6 +65,10 @@ This generated lane consumes `docs/generated/sim-index-fragment.sx`. Global inde
 - `recipes/05-study/placement-sweep/README.md`
 - `recipes/05-study/placement-sweep/recipe.toml`
 - `recipes/05-study/placement-sweep/src/main.rs`
+- `recipes/06-findings/sweep-to-finding/Cargo.toml`
+- `recipes/06-findings/sweep-to-finding/README.md`
+- `recipes/06-findings/sweep-to-finding/recipe.toml`
+- `recipes/06-findings/sweep-to-finding/src/main.rs`
 - `recipes/book.toml`
 
 ## Worked Examples
@@ -678,4 +684,21 @@ purpose = "README.md"
 order = 60
 tags = ["physics", "study", "sweep", "placement", "coverage"]
 requires = ["sim-lib-physics-study"]
+```
+
+### `feature/sim-physics/immutable-finding-history`
+
+Specimen `recipe/sim-physics/06-findings/sweep-to-finding` is checked by `xtask check-recipes`.
+
+Source `recipes/06-findings/sweep-to-finding/recipe.toml`:
+
+```toml
+id = "sweep-to-finding"
+title = "Preserve a surprising sweep result as an immutable finding"
+codec = "rust"
+setup = "src/main.rs"
+purpose = "README.md"
+order = 70
+tags = ["physics", "finding", "history", "evidence"]
+requires = ["sim-lib-physics-findings"]
 ```

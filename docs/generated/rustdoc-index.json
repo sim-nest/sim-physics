@@ -37,6 +37,13 @@
       "summary": "SIM workspace package for physics stored energy recipe."
     },
     {
+      "crate_name": "physics-sweep-to-finding-recipe",
+      "group": "workspace",
+      "manifest": "recipes/06-findings/sweep-to-finding/Cargo.toml",
+      "package": "physics-sweep-to-finding-recipe",
+      "summary": "SIM workspace package for physics sweep to finding recipe."
+    },
+    {
       "crate_name": "sim_lib_physics_audit",
       "group": "workspace",
       "manifest": "crates/sim-lib-physics-audit/Cargo.toml",
@@ -49,6 +56,13 @@
       "manifest": "crates/sim-lib-physics-core/Cargo.toml",
       "package": "sim-lib-physics-core",
       "summary": "Explicit, immutable topology for lumped physical studies."
+    },
+    {
+      "crate_name": "sim_lib_physics_findings",
+      "group": "workspace",
+      "manifest": "crates/sim-lib-physics-findings/Cargo.toml",
+      "package": "sim-lib-physics-findings",
+      "summary": "Immutable, branch-preserving histories for physics findings."
     },
     {
       "crate_name": "sim_lib_physics_influence",

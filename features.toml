@@ -103,3 +103,20 @@ id = "route/run-placement-transparent-physics-study"
 task = "Run a reviewable physics parameter sweep without coupling it to execution placement"
 audiences = ["code", "framework", "user"]
 steps = [{ feature = "feature/sim-physics/immutable-placement-studies", why = "Bind the immutable plan, generate canonical coverage evidence, preserve statistical partitions, and submit independent points through EvalFabric; Tensor-backed models retain their ordinary TensorSite placement beneath that fabric boundary. The crate integration suite proves boundaries, partitions, sampler replay, placement parity, partial failure, interruption, deterministic replay, provider envelopes, and explicit gaps." }, { feature = "feature/sim-physics/no-energy-selection", why = "Produce the clean influence proof required by the selection API while leaving energy outside the choice." }, { specimen = "recipe/sim-physics/05-study/placement-sweep", why = "Inspect a small inclusive sweep with an exact injected case and an explicit untested region." }]
+
+[[feature]]
+id = "feature/sim-physics/immutable-finding-history"
+title = "Immutable branch-preserving finding histories"
+summary = "Store surprising observations and every successor by content identity while preserving concurrent explanations and rebuilding disposable query projections."
+owner = "crate/sim-lib-physics-findings"
+audiences = ["code", "framework", "user"]
+guidance = "Compose kernel ContentId and Claim with sim-table-core validated paths and an injected sim-storage HostDirPort. Append typed successors with new evidence; reconcile competing heads explicitly. Do not use a ledger, SQL, filesystem paths, mutable records, or last-writer-wins."
+claims_anchors = ["anchor/crate/sim-lib-physics-findings"]
+claims_specimens = ["recipe/sim-physics/06-findings/sweep-to-finding"]
+composes = ["crate/sim-kernel", "crate/sim-table-core", "crate/sim-storage-port"]
+
+[[route]]
+id = "route/preserve-physics-finding-history"
+task = "Preserve and investigate a surprising physics result without erasing competing explanations"
+audiences = ["code", "framework", "user"]
+steps = [{ feature = "feature/sim-physics/immutable-placement-studies", why = "Produce reviewable sweep evidence and stable study identity." }, { feature = "feature/sim-physics/immutable-finding-history", why = "Publish the observation, append evidence-bearing successors, retain branches, and rebuild read-only projections from immutable records. Its crate integration suite proves identity, backend parity, interrupted and concurrent append, corruption refusal, branch reconciliation, rebuild, complete history, and redaction." }, { specimen = "recipe/sim-physics/06-findings/sweep-to-finding", why = "Convert one sweep residual into an open finding." }]

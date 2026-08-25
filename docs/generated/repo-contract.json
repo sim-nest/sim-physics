@@ -34,8 +34,10 @@
       "physics-placement-sweep-recipe",
       "physics-refused-selection-recipe",
       "physics-stored-energy-recipe",
+      "physics-sweep-to-finding-recipe",
       "sim-lib-physics-audit",
       "sim-lib-physics-core",
+      "sim-lib-physics-findings",
       "sim-lib-physics-influence",
       "sim-lib-physics-power",
       "sim-lib-physics-proof",
@@ -46,7 +48,7 @@
   },
   "non_citizen_exemption_count": 0,
   "non_citizen_exemptions": [],
-  "package_count": 13,
+  "package_count": 15,
   "packages": [
     {
       "crate_name": "boundary-event",
@@ -224,6 +226,41 @@
       ]
     },
     {
+      "crate_name": "physics-sweep-to-finding-recipe",
+      "dependencies": [
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-physics-findings",
+          "rename": null,
+          "target": null
+        }
+      ],
+      "description": "SIM workspace package for physics sweep to finding recipe.",
+      "features": [],
+      "group": "workspace",
+      "manifest": "recipes/06-findings/sweep-to-finding/Cargo.toml",
+      "name": "physics-sweep-to-finding-recipe",
+      "publish": "false",
+      "root": "recipes/06-findings/sweep-to-finding",
+      "rustdoc_summary": "SIM workspace package for physics sweep to finding recipe.",
+      "target_kinds": [
+        "bin"
+      ],
+      "targets": [
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "bin"
+          ],
+          "name": "physics-sweep-to-finding-recipe",
+          "src": "recipes/06-findings/sweep-to-finding/src/main.rs"
+        }
+      ]
+    },
+    {
       "crate_name": "sim_lib_physics_audit",
       "dependencies": [
         {
@@ -311,6 +348,44 @@
           ],
           "name": "boundary_event",
           "src": "crates/sim-lib-physics-core/tests/boundary_event.rs"
+        }
+      ]
+    },
+    {
+      "crate_name": "sim_lib_physics_findings",
+      "dependencies": [],
+      "description": "Immutable branch-preserving histories for physics findings.",
+      "features": [],
+      "group": "workspace",
+      "manifest": "crates/sim-lib-physics-findings/Cargo.toml",
+      "name": "sim-lib-physics-findings",
+      "publish": "true",
+      "root": "crates/sim-lib-physics-findings",
+      "rustdoc_summary": "Immutable, branch-preserving histories for physics findings.",
+      "target_kinds": [
+        "lib",
+        "test"
+      ],
+      "targets": [
+        {
+          "crate_types": [
+            "lib"
+          ],
+          "kind": [
+            "lib"
+          ],
+          "name": "sim_lib_physics_findings",
+          "src": "crates/sim-lib-physics-findings/src/lib.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "history",
+          "src": "crates/sim-lib-physics-findings/tests/history.rs"
         }
       ]
     },
@@ -583,10 +658,10 @@
     "generated_by": "cargo run -p xtask -- simdoc",
     "generation_timestamp": "2026-08-25T05:11:30+02:00",
     "generator": "xtask repo-contract v1",
-    "git_commit": "4e134404c83f8539e0e62dc77c5e0af5d4055683",
+    "git_commit": "eaf2b8a0397c3c15090eec0051e1365b210b35c5",
     "repo": "sim-physics",
     "schema": "sim.provenance.v1",
-    "source_commit": "4e134404c83f8539e0e62dc77c5e0af5d4055683",
+    "source_commit": "eaf2b8a0397c3c15090eec0051e1365b210b35c5",
     "source_remote": "https://github.com/sim-nest/sim-physics",
     "validation_commands": [
       "cargo fmt --all --check",
@@ -599,9 +674,9 @@
       "cargo run -p xtask -- validation-matrix --check --repo .",
       "cargo run -p xtask -- crate-catalog --check --repo ."
     ],
-    "workspace_hash": "98f49978fcfe19de",
+    "workspace_hash": "68df163fa7c17012",
     "workspace_hash_algorithm": "fnv1a64",
-    "workspace_hash_input_count": 35,
+    "workspace_hash_input_count": 40,
     "workspace_hash_inputs": [
       "Cargo.toml",
       "crates/sim-lib-physics-audit/Cargo.toml",
@@ -610,6 +685,9 @@
       "crates/sim-lib-physics-core/Cargo.toml",
       "crates/sim-lib-physics-core/src/lib.rs",
       "crates/sim-lib-physics-core/tests/boundary_event.rs",
+      "crates/sim-lib-physics-findings/Cargo.toml",
+      "crates/sim-lib-physics-findings/src/lib.rs",
+      "crates/sim-lib-physics-findings/tests/history.rs",
       "crates/sim-lib-physics-influence/Cargo.toml",
       "crates/sim-lib-physics-influence/src/lib.rs",
       "crates/sim-lib-physics-influence/tests/influence.rs",
@@ -636,6 +714,8 @@
       "recipes/04-influence/refused-selection/recipe.toml",
       "recipes/05-study/placement-sweep/Cargo.toml",
       "recipes/05-study/placement-sweep/recipe.toml",
+      "recipes/06-findings/sweep-to-finding/Cargo.toml",
+      "recipes/06-findings/sweep-to-finding/recipe.toml",
       "recipes/book.toml",
       "xtask/Cargo.toml"
     ]
@@ -648,7 +728,7 @@
       "card_id": "cookbook/sim-physics",
       "group": "",
       "package": "sim-physics",
-      "recipe_count": 6,
+      "recipe_count": 7,
       "recipes": [
         {
           "card_id": "sim-physics/00-overview/boundary-event",
@@ -697,6 +777,14 @@
           "package": "sim-physics",
           "recipe_toml": "recipes/05-study/placement-sweep/recipe.toml",
           "title": "Review an immutable placement-transparent sweep"
+        },
+        {
+          "card_id": "sim-physics/06-findings/sweep-to-finding",
+          "codec": "rust",
+          "id": "sweep-to-finding",
+          "package": "sim-physics",
+          "recipe_toml": "recipes/06-findings/sweep-to-finding/recipe.toml",
+          "title": "Preserve a surprising sweep result as an immutable finding"
         }
       ],
       "summary": "",

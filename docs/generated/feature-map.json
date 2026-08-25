@@ -29,12 +29,22 @@
     {
       "features": [],
       "group": "workspace",
+      "package": "physics-sweep-to-finding-recipe"
+    },
+    {
+      "features": [],
+      "group": "workspace",
       "package": "sim-lib-physics-audit"
     },
     {
       "features": [],
       "group": "workspace",
       "package": "sim-lib-physics-core"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-lib-physics-findings"
     },
     {
       "features": [],

@@ -15,3 +15,10 @@ not fork the study contract. Refusal, interruption, and unknown contact loss are
 first-class results, never implicit retries. Fit, selection, and untouched-test
 lanes remain disjoint; selection requires clean influence proof and energy can
 only annotate an already chosen result. Start with the placement-sweep recipe.
+
+Finding histories preserve the results that deserve investigation. Every open
+observation and typed successor has a stable content identity; concurrent
+explanations remain visible until explicit evidence reconciles them. Read-only
+views rebuild from immutable records across injected Table/Dir storage, so a
+cache loss or backend change cannot rewrite the scientific history. Start with
+the sweep-to-finding recipe.

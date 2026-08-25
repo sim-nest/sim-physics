@@ -22,4 +22,8 @@
 {"kind":"recipe","path":"recipes/05-study/placement-sweep/README.md"}
 {"kind":"recipe","path":"recipes/05-study/placement-sweep/recipe.toml"}
 {"kind":"recipe","path":"recipes/05-study/placement-sweep/src/main.rs"}
+{"kind":"recipe","path":"recipes/06-findings/sweep-to-finding/Cargo.toml"}
+{"kind":"recipe","path":"recipes/06-findings/sweep-to-finding/README.md"}
+{"kind":"recipe","path":"recipes/06-findings/sweep-to-finding/recipe.toml"}
+{"kind":"recipe","path":"recipes/06-findings/sweep-to-finding/src/main.rs"}
 {"kind":"recipe","path":"recipes/book.toml"}

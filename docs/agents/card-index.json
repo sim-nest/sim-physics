@@ -25,6 +25,10 @@
     "recipes/05-study/placement-sweep/README.md",
     "recipes/05-study/placement-sweep/recipe.toml",
     "recipes/05-study/placement-sweep/src/main.rs",
+    "recipes/06-findings/sweep-to-finding/Cargo.toml",
+    "recipes/06-findings/sweep-to-finding/README.md",
+    "recipes/06-findings/sweep-to-finding/recipe.toml",
+    "recipes/06-findings/sweep-to-finding/src/main.rs",
     "recipes/book.toml"
   ]
 }

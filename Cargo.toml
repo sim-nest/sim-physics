@@ -7,12 +7,14 @@ members = [
     "crates/sim-lib-physics-proof",
     "crates/sim-lib-physics-influence",
     "crates/sim-lib-physics-study",
+    "crates/sim-lib-physics-findings",
     "recipes/00-overview/boundary-event",
     "recipes/01-power/switched-two-port",
     "recipes/02-audit/stored-energy",
     "recipes/03-proof/certified-refinement",
     "recipes/04-influence/refused-selection",
     "recipes/05-study/placement-sweep",
+    "recipes/06-findings/sweep-to-finding",
     "xtask",
 ]
 
@@ -31,5 +33,7 @@ sim-cookbook = { path = "../sim-foundation/crates/sim-cookbook" }
 sim-cookbook-build = { path = "../sim-foundation/crates/sim-cookbook-build" }
 sim-kernel = { path = "../sim-kernel" }
 sim-shape = { path = "../sim-shape" }
+sim-table-core = { path = "../sim-foundation/crates/sim-table-core" }
+sim-storage-port = { path = "../sim-storage/crates/sim-storage-port" }
 sim-incremental-core = { path = "../sim-runtime/crates/sim-incremental-core" }
 sim-lib-numbers-interval = { path = "../sim-numbers/crates/sim-lib-numbers-interval" }

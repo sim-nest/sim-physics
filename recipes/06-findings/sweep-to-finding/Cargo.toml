@@ -1,0 +1,9 @@
+[package]
+name = "physics-sweep-to-finding-recipe"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+sim-kernel = "0.2.1"
+sim-lib-physics-findings = { path = "../../../crates/sim-lib-physics-findings" }
