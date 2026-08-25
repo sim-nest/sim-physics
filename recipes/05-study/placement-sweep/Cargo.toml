@@ -1,0 +1,10 @@
+[package]
+name = "physics-placement-sweep-recipe"
+version = "0.1.0"
+edition.workspace = true
+publish = false
+
+[dependencies]
+sim-kernel = { version = "0.2.1" }
+sim-lib-physics-study = { path = "../../../crates/sim-lib-physics-study" }
+sim-shape = { version = "0.2.4" }

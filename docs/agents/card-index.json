@@ -17,6 +17,14 @@
     "recipes/03-proof/certified-refinement/README.md",
     "recipes/03-proof/certified-refinement/recipe.toml",
     "recipes/03-proof/certified-refinement/src/main.rs",
+    "recipes/04-influence/refused-selection/Cargo.toml",
+    "recipes/04-influence/refused-selection/README.md",
+    "recipes/04-influence/refused-selection/recipe.toml",
+    "recipes/04-influence/refused-selection/src/main.rs",
+    "recipes/05-study/placement-sweep/Cargo.toml",
+    "recipes/05-study/placement-sweep/README.md",
+    "recipes/05-study/placement-sweep/recipe.toml",
+    "recipes/05-study/placement-sweep/src/main.rs",
     "recipes/book.toml"
   ]
 }

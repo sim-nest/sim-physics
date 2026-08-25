@@ -16,6 +16,20 @@
       "summary": "SIM workspace package for physics certified refinement recipe."
     },
     {
+      "crate_name": "physics-placement-sweep-recipe",
+      "group": "workspace",
+      "manifest": "recipes/05-study/placement-sweep/Cargo.toml",
+      "package": "physics-placement-sweep-recipe",
+      "summary": "SIM workspace package for physics placement sweep recipe."
+    },
+    {
+      "crate_name": "physics-refused-selection-recipe",
+      "group": "workspace",
+      "manifest": "recipes/04-influence/refused-selection/Cargo.toml",
+      "package": "physics-refused-selection-recipe",
+      "summary": "SIM workspace package for physics refused selection recipe."
+    },
+    {
       "crate_name": "physics-stored-energy-recipe",
       "group": "workspace",
       "manifest": "recipes/02-audit/stored-energy/Cargo.toml",
@@ -37,6 +51,13 @@
       "summary": "Explicit, immutable topology for lumped physical studies."
     },
     {
+      "crate_name": "sim_lib_physics_influence",
+      "group": "workspace",
+      "manifest": "crates/sim-lib-physics-influence/Cargo.toml",
+      "package": "sim-lib-physics-influence",
+      "summary": "Proof-producing enforcement of the no-energy-selection policy."
+    },
+    {
       "crate_name": "sim_lib_physics_power",
       "group": "workspace",
       "manifest": "crates/sim-lib-physics-power/Cargo.toml",
@@ -49,6 +70,13 @@
       "manifest": "crates/sim-lib-physics-proof/Cargo.toml",
       "package": "sim-lib-physics-proof",
       "summary": "Orthogonal refinement and certified model verdicts."
+    },
+    {
+      "crate_name": "sim_lib_physics_study",
+      "group": "workspace",
+      "manifest": "crates/sim-lib-physics-study/Cargo.toml",
+      "package": "sim-lib-physics-study",
+      "summary": "Immutable study plans and placement-transparent physics sweeps."
     },
     {
       "crate_name": "switched-two-port",

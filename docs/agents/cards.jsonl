@@ -14,4 +14,12 @@
 {"kind":"recipe","path":"recipes/03-proof/certified-refinement/README.md"}
 {"kind":"recipe","path":"recipes/03-proof/certified-refinement/recipe.toml"}
 {"kind":"recipe","path":"recipes/03-proof/certified-refinement/src/main.rs"}
+{"kind":"recipe","path":"recipes/04-influence/refused-selection/Cargo.toml"}
+{"kind":"recipe","path":"recipes/04-influence/refused-selection/README.md"}
+{"kind":"recipe","path":"recipes/04-influence/refused-selection/recipe.toml"}
+{"kind":"recipe","path":"recipes/04-influence/refused-selection/src/main.rs"}
+{"kind":"recipe","path":"recipes/05-study/placement-sweep/Cargo.toml"}
+{"kind":"recipe","path":"recipes/05-study/placement-sweep/README.md"}
+{"kind":"recipe","path":"recipes/05-study/placement-sweep/recipe.toml"}
+{"kind":"recipe","path":"recipes/05-study/placement-sweep/src/main.rs"}
 {"kind":"recipe","path":"recipes/book.toml"}

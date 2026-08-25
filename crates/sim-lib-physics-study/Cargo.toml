@@ -1,0 +1,23 @@
+[package]
+name = "sim-lib-physics-study"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+description = "Immutable physics study plans and placement-transparent sweep evidence."
+readme = "README.md"
+repository.workspace = true
+homepage.workspace = true
+publish = true
+
+[dependencies]
+sim-kernel = { version = "0.2.1" }
+sim-lib-numbers-stats = { path = "../../../sim-numbers/crates/sim-lib-numbers-stats", version = "0.4.0" }
+sim-lib-physics-influence = { path = "../sim-lib-physics-influence", version = "0.1.0" }
+sha2 = "0.10"
+
+[dev-dependencies]
+sim-incremental-core = { version = "0.1.2" }
+sim-shape = { version = "0.2.4" }
+
+[lints]
+workspace = true

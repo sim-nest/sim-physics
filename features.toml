@@ -78,11 +78,28 @@ owner = "crate/sim-lib-physics-influence"
 audiences = ["code", "framework", "user"]
 guidance = "Compose the one generic sim-incremental-core dataflow engine. Declare every study operation and dependency, treat unchecked native transforms as Unknown, and admit a SelectionInput only from the resulting clean completion proof. There is no capability override."
 claims_anchors = ["anchor/crate/sim-lib-physics-influence"]
-claims_specimens = ["spec-test/sim-physics/crates/sim-lib-physics-influence/tests/influence", "recipe/sim-physics/04-influence/refused-selection"]
-composes = ["feature/sim-runtime/incremental-query-core", "crate/sim-kernel", "crate/sim-shape"]
+claims_specimens = ["recipe/sim-physics/04-influence/refused-selection"]
+composes = ["crate/sim-incremental-core", "crate/sim-kernel"]
 
 [[route]]
 id = "route/refuse-energy-influenced-selection"
 task = "Prove that a physical-study selection input is independent of energy"
 audiences = ["code", "framework", "user"]
-steps = [{ feature = "feature/sim-runtime/incremental-query-core", why = "Reuse its admitted lattices, content-identified graph, bounded fixpoint, continuation, incremental invalidation, explanations, and completion proof." }, { feature = "feature/sim-physics/no-energy-selection", why = "Apply the fail-closed influence domain, protected sinks, native type-state, and runtime Shape preparation." }, { specimen = "spec-test/sim-physics/crates/sim-lib-physics-influence/tests/influence", why = "Prove direct and laundered influence, branches, joins, loops, opaque code, clean preparation, budget refusal, and incremental edits." }, { specimen = "recipe/sim-physics/04-influence/refused-selection", why = "Run a divide-by-time laundering refusal and inspect its causal path." }]
+steps = [{ feature = "feature/sim-physics/no-energy-selection", why = "Apply the fail-closed influence domain over the canonical incremental engine, protected sinks, native type-state, and runtime Shape preparation; its crate integration suite proves direct and laundered influence, branches, joins, loops, opaque code, clean preparation, budget refusal, and incremental edits." }, { specimen = "recipe/sim-physics/04-influence/refused-selection", why = "Run a divide-by-time laundering refusal and inspect its causal path." }]
+
+[[feature]]
+id = "feature/sim-physics/immutable-placement-studies"
+title = "Immutable placement-transparent physics studies"
+summary = "Review semantic sweep plans before execution and retain sampling, partition, placement, partial-outcome, replay, provider-envelope, and explicit coverage-gap evidence."
+owner = "crate/sim-lib-physics-study"
+audiences = ["code", "framework", "user"]
+guidance = "Use StudyPlan for parameter studies that must bind model and content identity, boundary/event graph, initial state, methods, refinements, semantic quantity Shapes, exact boundary cases, statistical partitions, outputs, limits, seed, policies, and placement before execution. Grid, Latin, and Sobol designs compose the canonical stats evidence. Submit independent points through realize_sweep and EvalFabric; do not add a scheduler, executor, transport, site, or Tensor fork. Require SelectionInput for selection and attach energy Observations only after choosing. Preserve refused, interrupted, and unknown outcomes without inferring retry safety from lost contact."
+claims_anchors = ["anchor/crate/sim-lib-physics-study"]
+claims_specimens = ["recipe/sim-physics/05-study/placement-sweep"]
+composes = ["crate/sim-lib-numbers-stats", "feature/sim-physics/no-energy-selection", "crate/sim-kernel"]
+
+[[route]]
+id = "route/run-placement-transparent-physics-study"
+task = "Run a reviewable physics parameter sweep without coupling it to execution placement"
+audiences = ["code", "framework", "user"]
+steps = [{ feature = "feature/sim-physics/immutable-placement-studies", why = "Bind the immutable plan, generate canonical coverage evidence, preserve statistical partitions, and submit independent points through EvalFabric; Tensor-backed models retain their ordinary TensorSite placement beneath that fabric boundary. The crate integration suite proves boundaries, partitions, sampler replay, placement parity, partial failure, interruption, deterministic replay, provider envelopes, and explicit gaps." }, { feature = "feature/sim-physics/no-energy-selection", why = "Produce the clean influence proof required by the selection API while leaving energy outside the choice." }, { specimen = "recipe/sim-physics/05-study/placement-sweep", why = "Inspect a small inclusive sweep with an exact injected case and an explicit untested region." }]
