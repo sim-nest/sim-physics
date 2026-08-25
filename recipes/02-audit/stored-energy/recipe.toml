@@ -1,0 +1,8 @@
+id = "stored-energy"
+title = "Independent stored-energy audit"
+codec = "rust"
+setup = "src/main.rs"
+purpose = "README.md"
+order = 30
+tags = ["physics", "energy", "audit", "residual"]
+requires = ["sim-lib-physics-audit"]

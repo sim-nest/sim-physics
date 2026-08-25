@@ -16,9 +16,9 @@ summary = "Validate immutable boundaries, stores, declared ports, semantic time 
 owner = "crate/sim-lib-physics-core"
 audiences = ["code", "framework", "user"]
 guidance = "Use this core for lumped dynamic studies. Compose sim-numbers quantities and existing Shape, content-id, Claim, read-construct, cookbook, and Index contracts; keep numerical methods, field solvers, scheduling, persistence, codecs, effects, and kernel types in their owners."
-claims_anchors = ["anchor/crate/sim-lib-physics-core", "anchor/crate/boundary-event"]
+claims_anchors = ["anchor/crate/sim-lib-physics-core"]
 claims_specimens = ["spec-test/sim-physics/crates/sim-lib-physics-core/tests/boundary_event"]
-composes = ["crate/sim-lib-numbers-quantity", "crate/sim-shape", "crate/sim-kernel", "crate/sim-cookbook", "crate/sim-index-core"]
+composes = ["crate/sim-lib-numbers-quantity"]
 [[route]]
 id = "route/model-lumped-boundary-events"
 task = "Model a lumped dynamic system with explicit boundaries and events"
@@ -31,11 +31,26 @@ summary = "Declare boundary-relative effort/flow pairs and audit continuous work
 owner = "crate/sim-lib-physics-power"
 audiences = ["code", "framework", "user"]
 guidance = "Compose physics boundary identities, sim-numbers quantity Shapes and trajectory/quadrature owners. Declare orientation once, split at every event, retain per-port method evidence, and never encode an impulse as sampled power."
-claims_anchors = ["anchor/crate/sim-lib-physics-power", "anchor/crate/switched-two-port"]
+claims_anchors = ["anchor/crate/sim-lib-physics-power"]
 claims_specimens = ["spec-test/sim-physics/crates/sim-lib-physics-power/tests/work"]
-composes = ["crate/sim-lib-physics-core", "crate/sim-lib-numbers-quantity", "crate/sim-lib-numbers-numeric", "crate/sim-lib-numbers-quad"]
+composes = ["crate/sim-lib-physics-core", "crate/sim-lib-numbers-quantity"]
 [[route]]
 id = "route/audit-conjugate-port-work"
 task = "Audit signed continuous and impulsive work across physical boundaries"
 audiences = ["code", "framework", "user"]
-steps = [{ feature = "feature/sim-physics/boundary-event-core", why = "Declare the boundary and crossing port identities." }, { feature = "feature/sim-physics/conjugate-port-work", why = "Pair effort and flow, orient the port, split continuous work at events, and retain impulses separately." }, { specimen = "spec-test/sim-physics/crates/sim-lib-physics-power/tests/work", why = "The specimen proves analytic domains, orientation, discontinuities, simultaneous events, and pure impulses." }, { recipe = "recipe/sim-physics/switched-two-port", why = "Run a switched electrical-to-mechanical two-port audit." }]
+steps = [{ feature = "feature/sim-physics/boundary-event-core", why = "Declare the boundary and crossing port identities." }, { feature = "feature/sim-physics/conjugate-port-work", why = "Pair effort and flow, orient the port, split continuous work at events, and retain impulses separately." }, { specimen = "spec-test/sim-physics/crates/sim-lib-physics-power/tests/work", why = "The specimen proves analytic domains, orientation, discontinuities, simultaneous events, and pure impulses." }, { specimen = "recipe/sim-physics/01-power/switched-two-port", why = "Run a switched electrical-to-mechanical two-port audit." }]
+[[feature]]
+id = "feature/sim-physics/stored-energy-audit"
+title = "Independent stored-energy audit"
+summary = "Evaluate endpoint stores independently and preserve typed residual and uncertainty lanes in an immutable content-identified audit."
+owner = "crate/sim-lib-physics-audit"
+audiences = ["code", "framework", "user"]
+guidance = "Compose the boundary and signed-work owners with constitutive endpoint evaluators. Keep every port and event term, declare reduction and uncertainty combination rules, and report energy discrepancy as an observation rather than dissipation."
+claims_anchors = ["anchor/crate/sim-lib-physics-audit"]
+claims_specimens = ["spec-test/sim-physics/crates/sim-lib-physics-audit/tests/audit"]
+composes = ["crate/sim-lib-physics-core", "crate/sim-lib-physics-power", "crate/sim-lib-numbers-method", "crate/sim-lib-numbers-quantity", "crate/sim-kernel"]
+[[route]]
+id = "route/audit-independent-stored-energy"
+task = "Audit stored-energy balance without deriving endpoint stores from transferred work"
+audiences = ["code", "framework", "user"]
+steps = [{ feature = "feature/sim-physics/conjugate-port-work", why = "Retain signed continuous work and event transfers at the declared boundary." }, { feature = "feature/sim-physics/stored-energy-audit", why = "Evaluate both endpoint states constitutively and compute the visible balance with typed evidence lanes." }, { specimen = "spec-test/sim-physics/crates/sim-lib-physics-audit/tests/audit", why = "The specimen proves independent perturbations, sign and omission failures, distinct residuals, and separated uncertainty." }, { specimen = "recipe/sim-physics/02-audit/stored-energy", why = "Inspect the equation, Shapes, and runtime exports." }]

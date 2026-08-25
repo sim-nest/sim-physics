@@ -3,8 +3,10 @@ resolver = "3"
 members = [
     "crates/sim-lib-physics-core",
     "crates/sim-lib-physics-power",
+    "crates/sim-lib-physics-audit",
     "recipes/00-overview/boundary-event",
     "recipes/01-power/switched-two-port",
+    "recipes/02-audit/stored-energy",
     "xtask",
 ]
 

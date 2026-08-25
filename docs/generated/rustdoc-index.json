@@ -1,0 +1,54 @@
+{
+  "generator": "xtask repo-contract v1",
+  "packages": [
+    {
+      "crate_name": "boundary-event",
+      "group": "workspace",
+      "manifest": "recipes/00-overview/boundary-event/Cargo.toml",
+      "package": "boundary-event",
+      "summary": "SIM workspace package for boundary event."
+    },
+    {
+      "crate_name": "physics-stored-energy-recipe",
+      "group": "workspace",
+      "manifest": "recipes/02-audit/stored-energy/Cargo.toml",
+      "package": "physics-stored-energy-recipe",
+      "summary": "SIM workspace package for physics stored energy recipe."
+    },
+    {
+      "crate_name": "sim_lib_physics_audit",
+      "group": "workspace",
+      "manifest": "crates/sim-lib-physics-audit/Cargo.toml",
+      "package": "sim-lib-physics-audit",
+      "summary": "Independent stored-energy audits with non-interchangeable evidence lanes."
+    },
+    {
+      "crate_name": "sim_lib_physics_core",
+      "group": "workspace",
+      "manifest": "crates/sim-lib-physics-core/Cargo.toml",
+      "package": "sim-lib-physics-core",
+      "summary": "Explicit, immutable topology for lumped physical studies."
+    },
+    {
+      "crate_name": "sim_lib_physics_power",
+      "group": "workspace",
+      "manifest": "crates/sim-lib-physics-power/Cargo.toml",
+      "package": "sim-lib-physics-power",
+      "summary": "Boundary-relative conjugate ports and event-split signed work."
+    },
+    {
+      "crate_name": "switched-two-port",
+      "group": "workspace",
+      "manifest": "recipes/01-power/switched-two-port/Cargo.toml",
+      "package": "switched-two-port",
+      "summary": "SIM workspace package for switched two port."
+    },
+    {
+      "crate_name": "xtask",
+      "group": "workspace",
+      "manifest": "xtask/Cargo.toml",
+      "package": "xtask",
+      "summary": "Repository automation wrapper for sim-femm generated documentation."
+    }
+  ]
+}

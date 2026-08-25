@@ -1,3 +1,3 @@
-# Diagram sources
+# Diagram Sources
 
-Authored diagram sources belong here.
+Place editable diagram sources for `REPO_NAME` here.

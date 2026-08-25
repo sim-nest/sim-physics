@@ -1,0 +1,8 @@
+[package]
+name = "physics-stored-energy-recipe"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+sim-lib-physics-audit = { path = "../../../crates/sim-lib-physics-audit" }

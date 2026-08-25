@@ -1,0 +1,18 @@
+{
+  "schema": "sim.card-index.v1",
+  "cards": [
+    "recipes/00-overview/boundary-event/Cargo.toml",
+    "recipes/00-overview/boundary-event/README.md",
+    "recipes/00-overview/boundary-event/recipe.toml",
+    "recipes/00-overview/boundary-event/src/main.rs",
+    "recipes/01-power/switched-two-port/Cargo.toml",
+    "recipes/01-power/switched-two-port/README.md",
+    "recipes/01-power/switched-two-port/recipe.toml",
+    "recipes/01-power/switched-two-port/src/main.rs",
+    "recipes/02-audit/stored-energy/Cargo.toml",
+    "recipes/02-audit/stored-energy/README.md",
+    "recipes/02-audit/stored-energy/recipe.toml",
+    "recipes/02-audit/stored-energy/src/main.rs",
+    "recipes/book.toml"
+  ]
+}

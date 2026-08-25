@@ -1,0 +1,13 @@
+{"kind":"recipe","path":"recipes/00-overview/boundary-event/Cargo.toml"}
+{"kind":"recipe","path":"recipes/00-overview/boundary-event/README.md"}
+{"kind":"recipe","path":"recipes/00-overview/boundary-event/recipe.toml"}
+{"kind":"recipe","path":"recipes/00-overview/boundary-event/src/main.rs"}
+{"kind":"recipe","path":"recipes/01-power/switched-two-port/Cargo.toml"}
+{"kind":"recipe","path":"recipes/01-power/switched-two-port/README.md"}
+{"kind":"recipe","path":"recipes/01-power/switched-two-port/recipe.toml"}
+{"kind":"recipe","path":"recipes/01-power/switched-two-port/src/main.rs"}
+{"kind":"recipe","path":"recipes/02-audit/stored-energy/Cargo.toml"}
+{"kind":"recipe","path":"recipes/02-audit/stored-energy/README.md"}
+{"kind":"recipe","path":"recipes/02-audit/stored-energy/recipe.toml"}
+{"kind":"recipe","path":"recipes/02-audit/stored-energy/src/main.rs"}
+{"kind":"recipe","path":"recipes/book.toml"}

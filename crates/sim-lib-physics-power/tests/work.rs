@@ -1,3 +1,4 @@
+// conformance: boundary-relative signed work contract
 use sim_lib_physics_power::*;
 use std::sync::Arc;
 

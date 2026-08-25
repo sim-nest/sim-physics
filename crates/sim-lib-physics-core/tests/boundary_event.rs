@@ -1,4 +1,5 @@
 use sim_lib_numbers_quantity::{BaseDimension, Dimension, ExactScalar, MeasureRole, Quantity};
+// conformance: immutable boundary and event graph contract
 use sim_lib_physics_core::*;
 fn q(v: i64) -> PhysicalQuantity {
     Quantity::new(

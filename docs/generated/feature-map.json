@@ -1,0 +1,40 @@
+{
+  "generator": "xtask repo-contract v1",
+  "packages": [
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "boundary-event"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "physics-stored-energy-recipe"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-lib-physics-audit"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-lib-physics-core"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-lib-physics-power"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "switched-two-port"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "xtask"
+    }
+  ]
+}
