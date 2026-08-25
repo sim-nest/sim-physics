@@ -54,3 +54,18 @@ id = "route/audit-independent-stored-energy"
 task = "Audit stored-energy balance without deriving endpoint stores from transferred work"
 audiences = ["code", "framework", "user"]
 steps = [{ feature = "feature/sim-physics/conjugate-port-work", why = "Retain signed continuous work and event transfers at the declared boundary." }, { feature = "feature/sim-physics/stored-energy-audit", why = "Evaluate both endpoint states constitutively and compute the visible balance with typed evidence lanes." }, { specimen = "spec-test/sim-physics/crates/sim-lib-physics-audit/tests/audit", why = "The specimen proves independent perturbations, sign and omission failures, distinct residuals, and separated uncertainty." }, { specimen = "recipe/sim-physics/02-audit/stored-energy", why = "Inspect the equation, Shapes, and runtime exports." }]
+[[feature]]
+id = "feature/sim-physics/certified-orthogonal-refinement"
+title = "Certified orthogonal refinement"
+summary = "Refine independent numerical and model axes, retain signed comparisons, and issue definite threshold verdicts only from certified enclosures."
+owner = "crate/sim-lib-physics-proof"
+audiences = ["code", "framework", "user"]
+guidance = "Compose physics audit evidence with sim-numbers interval, extended-precision, and method layers. Keep all six refinement axes and threshold lanes explicit; refinement spreads are estimates and cannot certify a verdict."
+claims_anchors = ["anchor/crate/sim-lib-physics-proof"]
+claims_specimens = ["recipe/sim-physics/03-proof/certified-refinement"]
+composes = ["crate/sim-lib-physics-audit", "crate/sim-lib-numbers-interval", "crate/sim-lib-numbers-extended", "crate/sim-lib-numbers-method"]
+[[route]]
+id = "route/certify-physics-refinement"
+task = "Distinguish numerical convergence from a certified mathematical-model verdict"
+audiences = ["code", "framework", "user"]
+steps = [{ feature = "feature/sim-physics/stored-energy-audit", why = "Retain independent audit evidence lanes." }, { feature = "feature/sim-physics/certified-orthogonal-refinement", why = "Refine each assumption explicitly and require a sealed enclosure for definite claims; its crate integration tests prove sign reversal, non-monotonicity, independent failures, refusal of estimates, continuation diagnoses, and reproducible identity." }, { specimen = "recipe/sim-physics/03-proof/certified-refinement", why = "Inspect event-exact meshing and runtime exports." }]

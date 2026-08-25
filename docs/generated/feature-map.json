@@ -9,6 +9,11 @@
     {
       "features": [],
       "group": "workspace",
+      "package": "physics-certified-refinement-recipe"
+    },
+    {
+      "features": [],
+      "group": "workspace",
       "package": "physics-stored-energy-recipe"
     },
     {
@@ -25,6 +30,19 @@
       "features": [],
       "group": "workspace",
       "package": "sim-lib-physics-power"
+    },
+    {
+      "features": [
+        {
+          "edges": [
+            "dep:sim-lib-numbers-extended"
+          ],
+          "name": "extended-precision",
+          "workspace_edges": []
+        }
+      ],
+      "group": "workspace",
+      "package": "sim-lib-physics-proof"
     },
     {
       "features": [],

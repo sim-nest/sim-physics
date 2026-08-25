@@ -20,12 +20,14 @@ This generated lane consumes `docs/generated/sim-index-fragment.sx`. Global inde
 | `feature/sim-physics/boundary-event-core` | `crate/sim-lib-physics-core` | 1 | Validate immutable boundaries, stores, declared ports, semantic time spans, ordered events, and signed-power transfers before solving. |
 | `feature/sim-physics/conjugate-port-work` | `crate/sim-lib-physics-power` | 1 | Declare boundary-relative effort/flow pairs and audit continuous work per port while retaining event impulses separately. |
 | `feature/sim-physics/stored-energy-audit` | `crate/sim-lib-physics-audit` | 1 | Evaluate endpoint stores independently and preserve typed residual and uncertainty lanes in an immutable content-identified audit. |
+| `feature/sim-physics/certified-orthogonal-refinement` | `crate/sim-lib-physics-proof` | 1 | Refine independent numerical and model axes, retain signed comparisons, and issue definite threshold verdicts only from certified enclosures. |
 
 ## Surfaces
 
 | Surface | Kind | Subject |
 | --- | --- | --- |
 | `cli/boundary-event` | `cli` | `crate/boundary-event` |
+| `cli/physics-certified-refinement-recipe` | `cli` | `crate/physics-certified-refinement-recipe` |
 | `cli/physics-stored-energy-recipe` | `cli` | `crate/physics-stored-energy-recipe` |
 | `cli/switched-two-port` | `cli` | `crate/switched-two-port` |
 | `cli/xtask` | `cli` | `crate/xtask` |
@@ -45,6 +47,10 @@ This generated lane consumes `docs/generated/sim-index-fragment.sx`. Global inde
 - `recipes/02-audit/stored-energy/README.md`
 - `recipes/02-audit/stored-energy/recipe.toml`
 - `recipes/02-audit/stored-energy/src/main.rs`
+- `recipes/03-proof/certified-refinement/Cargo.toml`
+- `recipes/03-proof/certified-refinement/README.md`
+- `recipes/03-proof/certified-refinement/recipe.toml`
+- `recipes/03-proof/certified-refinement/src/main.rs`
 - `recipes/book.toml`
 
 ## Worked Examples
@@ -609,4 +615,21 @@ fn independent_endpoints_and_uncertainty_semantics_fail_closed() {
         }));
     assert_eq!(AuditRecord::new(unlike), Err(AuditError::UnlikeUncertainty));
 }
+```
+
+### `feature/sim-physics/certified-orthogonal-refinement`
+
+Specimen `recipe/sim-physics/03-proof/certified-refinement` is checked by `xtask check-recipes`.
+
+Source `recipes/03-proof/certified-refinement/recipe.toml`:
+
+```toml
+id = "certified-refinement"
+title = "Certified orthogonal refinement"
+codec = "rust"
+setup = "src/main.rs"
+purpose = "README.md"
+order = 40
+tags = ["physics", "proof", "refinement", "interval"]
+requires = ["sim-lib-physics-proof"]
 ```

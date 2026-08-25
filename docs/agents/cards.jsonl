@@ -10,4 +10,8 @@
 {"kind":"recipe","path":"recipes/02-audit/stored-energy/README.md"}
 {"kind":"recipe","path":"recipes/02-audit/stored-energy/recipe.toml"}
 {"kind":"recipe","path":"recipes/02-audit/stored-energy/src/main.rs"}
+{"kind":"recipe","path":"recipes/03-proof/certified-refinement/Cargo.toml"}
+{"kind":"recipe","path":"recipes/03-proof/certified-refinement/README.md"}
+{"kind":"recipe","path":"recipes/03-proof/certified-refinement/recipe.toml"}
+{"kind":"recipe","path":"recipes/03-proof/certified-refinement/src/main.rs"}
 {"kind":"recipe","path":"recipes/book.toml"}

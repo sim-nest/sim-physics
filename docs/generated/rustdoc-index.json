@@ -9,6 +9,13 @@
       "summary": "SIM workspace package for boundary event."
     },
     {
+      "crate_name": "physics-certified-refinement-recipe",
+      "group": "workspace",
+      "manifest": "recipes/03-proof/certified-refinement/Cargo.toml",
+      "package": "physics-certified-refinement-recipe",
+      "summary": "SIM workspace package for physics certified refinement recipe."
+    },
+    {
       "crate_name": "physics-stored-energy-recipe",
       "group": "workspace",
       "manifest": "recipes/02-audit/stored-energy/Cargo.toml",
@@ -35,6 +42,13 @@
       "manifest": "crates/sim-lib-physics-power/Cargo.toml",
       "package": "sim-lib-physics-power",
       "summary": "Boundary-relative conjugate ports and event-split signed work."
+    },
+    {
+      "crate_name": "sim_lib_physics_proof",
+      "group": "workspace",
+      "manifest": "crates/sim-lib-physics-proof/Cargo.toml",
+      "package": "sim-lib-physics-proof",
+      "summary": "Orthogonal refinement and certified model verdicts."
     },
     {
       "crate_name": "switched-two-port",

@@ -1,0 +1,22 @@
+[package]
+name = "sim-lib-physics-proof"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+description = "Orthogonal numerical refinement and certified model verdicts for physical studies."
+readme = "README.md"
+repository.workspace = true
+homepage.workspace = true
+publish = true
+
+[dependencies]
+sim-lib-numbers-interval = { version = "0.1.0" }
+sim-lib-numbers-extended = { path = "../../../sim-numbers/crates/sim-lib-numbers-extended", version = "0.1.0", optional = true }
+sim-lib-numbers-method = { path = "../../../sim-numbers/crates/sim-lib-numbers-method", version = "0.1.0" }
+sim-lib-physics-audit = { path = "../sim-lib-physics-audit", version = "0.1.0" }
+
+[features]
+extended-precision = ["dep:sim-lib-numbers-extended"]
+
+[lints]
+workspace = true
