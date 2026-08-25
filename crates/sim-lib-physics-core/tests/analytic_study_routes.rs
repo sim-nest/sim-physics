@@ -10,8 +10,8 @@ fn switched_network_and_impact_laws_are_self_contained() {
     assert_eq!(switched_work, 45.0 / 8.0);
 
     // m1=2, m2=3, u1=4, u2=-1, restitution=1/2.
-    let (v1, v2) = (-0.5, 2.0);
-    assert_eq!(2.0 * 4.0 + 3.0 * -1.0, 2.0 * v1 + 3.0 * v2);
+    let (v1, v2): (f64, f64) = (-0.5, 2.0);
+    assert_eq!(2.0 * 4.0 - 3.0, 2.0 * v1 + 3.0 * v2);
     let before = 0.5 * 2.0 * 4.0_f64.powi(2) + 0.5 * 3.0 * (-1.0_f64).powi(2);
     let after = 0.5 * 2.0 * v1.powi(2) + 0.5 * 3.0 * v2.powi(2);
     assert_eq!(before - after, 45.0 / 4.0);

@@ -1,3 +1,5 @@
+{"kind":"recipe","path":"crates/sim-lib-physics-adapter/recipes/01-conformance/chapter.toml"}
+{"kind":"recipe","path":"crates/sim-lib-physics-adapter/recipes/book.toml"}
 {"kind":"recipe","path":"recipes/00-overview/boundary-event/Cargo.toml"}
 {"kind":"recipe","path":"recipes/00-overview/boundary-event/README.md"}
 {"kind":"recipe","path":"recipes/00-overview/boundary-event/recipe.toml"}

@@ -1,6 +1,8 @@
 {
   "schema": "sim.card-index.v1",
   "cards": [
+    "crates/sim-lib-physics-adapter/recipes/01-conformance/chapter.toml",
+    "crates/sim-lib-physics-adapter/recipes/book.toml",
     "recipes/00-overview/boundary-event/Cargo.toml",
     "recipes/00-overview/boundary-event/README.md",
     "recipes/00-overview/boundary-event/recipe.toml",

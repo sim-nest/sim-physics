@@ -44,6 +44,13 @@
       "summary": "SIM workspace package for physics sweep to finding recipe."
     },
     {
+      "crate_name": "sim_lib_physics_adapter",
+      "group": "workspace",
+      "manifest": "crates/sim-lib-physics-adapter/Cargo.toml",
+      "package": "sim-lib-physics-adapter",
+      "summary": "Domain-neutral records and fail-closed conformance for physics model adapters."
+    },
+    {
       "crate_name": "sim_lib_physics_audit",
       "group": "workspace",
       "manifest": "crates/sim-lib-physics-audit/Cargo.toml",

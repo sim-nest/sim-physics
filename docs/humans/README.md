@@ -17,6 +17,8 @@ This generated lane consumes `docs/generated/sim-index-fragment.sx`. Global inde
 
 | Feature | Subject | Specimens | Summary |
 | --- | --- | ---: | --- |
+| `feature/sim-physics/self-contained-analytic-studies` | `crate/sim-lib-physics-study` | 1 | Compose event-split conjugate-port work, independent stores, clean selection, refinement, certified thresholds, replay envelopes, and polynomial modal roots in checked synthetic studies with independently derived equations. |
+| `feature/sim-physics/model-adapter-conformance` | `crate/sim-lib-physics-adapter` | 1 | Lower domain results into stable identities, semantic observations, explicit boundaries, influences, and separated model/solver evidence without upward domain coupling. |
 | `feature/sim-physics/boundary-event-core` | `crate/sim-lib-physics-core` | 1 | Validate immutable boundaries, stores, declared ports, semantic time spans, ordered events, and signed-power transfers before solving. |
 | `feature/sim-physics/conjugate-port-work` | `crate/sim-lib-physics-power` | 1 | Declare boundary-relative effort/flow pairs and audit continuous work per port while retaining event impulses separately. |
 | `feature/sim-physics/stored-energy-audit` | `crate/sim-lib-physics-audit` | 1 | Evaluate endpoint stores independently and preserve typed residual and uncertainty lanes in an immutable content-identified audit. |
@@ -41,6 +43,8 @@ This generated lane consumes `docs/generated/sim-index-fragment.sx`. Global inde
 
 ## Recipes
 
+- `crates/sim-lib-physics-adapter/recipes/01-conformance/chapter.toml`
+- `crates/sim-lib-physics-adapter/recipes/book.toml`
 - `recipes/00-overview/boundary-event/Cargo.toml`
 - `recipes/00-overview/boundary-event/README.md`
 - `recipes/00-overview/boundary-event/recipe.toml`
@@ -72,6 +76,197 @@ This generated lane consumes `docs/generated/sim-index-fragment.sx`. Global inde
 - `recipes/book.toml`
 
 ## Worked Examples
+
+### `feature/sim-physics/self-contained-analytic-studies`
+
+Specimen `spec-test/sim-physics/crates/sim-lib-physics-core/tests/boundary_event` is checked by `cargo test`.
+
+Source `crates/sim-lib-physics-core/tests/boundary_event.rs`:
+
+```rust
+use sim_lib_numbers_quantity::{BaseDimension, Dimension, ExactScalar, MeasureRole, Quantity};
+// conformance: immutable boundary and event graph contract
+use sim_lib_physics_core::*;
+fn q(v: i64) -> PhysicalQuantity {
+    Quantity::new(
+        ExactScalar::from(v),
+        Dimension::base(BaseDimension::Time),
+        None,
+        None,
+        MeasureRole::Interval,
+    )
+    .unwrap()
+}
+fn graph() -> EventGraph {
+    let b = Boundary {
+        id: BoundaryId::new("tank").unwrap(),
+        closure: BoundaryClosure::Open,
+        stores: vec![StoreRef::new("thermal").unwrap()],
+        ports: vec![PortRef::new("heater").unwrap()],
+    };
+    let e = Event {
+        id: EventRef::new("switch-on").unwrap(),
+        at: q(1),
+        influences: vec![StateRef::new("temperature").unwrap()],
+    };
+    let t = Transfer {
+        from: Endpoint::SpanStart,
+        to: Endpoint::Event(e.id.clone()),
+        path: TransferPath::Crossing {
+            boundary: b.id.clone(),
+            port: b.ports[0].clone(),
+            store: b.stores[0].clone(),
+        },
+        signed_power: q(10),
+    };
+    let mut g = EventGraph {
+        id: String::new(),
+        span: TimeSpan {
+            start: q(0),
+            end: q(2),
+        },
+        boundaries: vec![b],
+        events: vec![e],
+        transfers: vec![t],
+    };
+    g.id = g.canonical_id();
+    g
+}
+#[test]
+fn valid_graph_round_trips() {
+    let g = graph();
+    g.validate().unwrap();
+    assert!(g.read_construct().starts_with("#(physics/EventGraph"));
+    assert_eq!(SHAPES.len(), 4)
+}
+#[test]
+fn simultaneous_events_are_legal() {
+    let mut g = graph();
+    let e = Event {
+        id: EventRef::new("sample").unwrap(),
+        at: q(1),
+        influences: vec![],
+    };
+    g.transfers.push(Transfer {
+        from: Endpoint::Event(g.events[0].id.clone()),
+        to: Endpoint::Event(e.id.clone()),
+        path: TransferPath::Internal {
+            boundary: g.boundaries[0].id.clone(),
+            from: g.boundaries[0].stores[0].clone(),
+            to: g.boundaries[0].stores[0].clone(),
+        },
+        signed_power: q(0),
+    });
+    g.events.push(e);
+    g.id = g.canonical_id();
+    g.validate().unwrap()
+}
+#[test]
+fn rejects_bad_topology() {
+    let mut g = graph();
+    if let TransferPath::Crossing { port, .. } = &mut g.transfers[0].path {
+        *port = PortRef::new("missing").unwrap()
+    }
+    g.id = g.canonical_id();
+    assert!(matches!(
+        g.validate(),
+        Err(PhysicsError::InvalidTransfer(_))
+    ));
+    let mut g = graph();
+    g.boundaries[0].closure = BoundaryClosure::Closed;
+    g.id = g.canonical_id();
+    assert!(matches!(
+        g.validate(),
+        Err(PhysicsError::InvalidTransfer(_))
+    ));
+    let mut g = graph();
+    g.events.push(Event {
+        id: EventRef::new("orphan").unwrap(),
+        at: q(2),
+        influences: vec![],
+    });
+    g.id = g.canonical_id();
+    assert_eq!(
+        g.validate(),
+        Err(PhysicsError::Unreachable("orphan".into()))
+    )
+}
+#[test]
+fn rejects_duplicates_order_and_tampering() {
+    let mut g = graph();
+    let duplicate_store = g.boundaries[0].stores[0].clone();
+    g.boundaries[0].stores.push(duplicate_store);
+    g.id = g.canonical_id();
+    assert!(matches!(
+        g.validate(),
+        Err(PhysicsError::Duplicate("store", _))
+    ));
+    let mut g = graph();
+    g.events[0].at = q(3);
+    g.id = g.canonical_id();
+    assert_eq!(g.validate(), Err(PhysicsError::EndpointOrder));
+    let mut g = graph();
+    g.id = "wrong".into();
+    assert!(matches!(
+        g.validate(),
+        Err(PhysicsError::IdentityMismatch { .. })
+    ))
+}
+```
+
+### `feature/sim-physics/model-adapter-conformance`
+
+Specimen `spec-test/sim-physics/crates/sim-lib-physics-adapter/tests/conformance` is checked by `cargo test`.
+
+Source `crates/sim-lib-physics-adapter/tests/conformance.rs`:
+
+```rust
+use sim_lib_physics_adapter::*;
+
+fn id(s: &str) -> StableIdentity {
+    StableIdentity::new(s).unwrap()
+}
+fn model() -> AdaptedModel {
+    AdaptedModel {
+        model_id: id("model/1"),
+        state_id: id("state/1"),
+        boundary_id: id("boundary/1"),
+        boundary_complete: true,
+        ports: vec![],
+        stores: vec![id("store/energy")],
+        events: vec![id("event/solve")],
+        observations: vec![Observation {
+            id: id("observation/energy"),
+            kind: "si:energy".into(),
+            dimension: ENERGY,
+            value: 2.0,
+            unit: "J".into(),
+            origin: DataOrigin::Modeled,
+        }],
+        influences: vec![id("state/temperature")],
+        model_evidence: vec!["analytic-model".into()],
+        solver_evidence: vec!["residual=0".into()],
+    }
+}
+
+#[test]
+fn accepts_complete_records_but_refuses_missing_lumped_port() {
+    assert_eq!(model().validate(), Ok(()));
+    assert_eq!(
+        model().validate_lumped_audit(),
+        Err(AdapterRefusal::MissingPort)
+    );
+}
+#[test]
+fn separates_origin_and_evidence_and_propagates_influences() {
+    let mut value = model();
+    value.observations[0].origin = DataOrigin::Observed;
+    assert_eq!(value.influences, vec![id("state/temperature")]);
+    assert_ne!(value.observations[0].origin, DataOrigin::Modeled);
+    value.solver_evidence.clear();
+    assert_eq!(value.validate(), Err(AdapterRefusal::EvidenceNotSeparated));
+}
+```
 
 ### `feature/sim-physics/boundary-event-core`
 
