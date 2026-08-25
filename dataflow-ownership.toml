@@ -1,0 +1,7 @@
+schema = "sim.dataflow-domain-adapter/v1"
+generic_owner = "sim-incremental-core"
+domain_crate = "sim-lib-physics-influence"
+classification = "domain-transfer-rules"
+reason = "The physics crate declares graph inputs and a monotone influence transfer; it owns no queued frontier, retained fixpoint state, continuation, widening, or proof constructor."
+forbidden_types = ["VecDeque", "BinaryHeap"]
+forbidden_terms = ["struct Worklist", "struct CompletionProof", "struct Continuation"]

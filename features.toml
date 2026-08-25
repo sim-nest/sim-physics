@@ -69,3 +69,20 @@ id = "route/certify-physics-refinement"
 task = "Distinguish numerical convergence from a certified mathematical-model verdict"
 audiences = ["code", "framework", "user"]
 steps = [{ feature = "feature/sim-physics/stored-energy-audit", why = "Retain independent audit evidence lanes." }, { feature = "feature/sim-physics/certified-orthogonal-refinement", why = "Refine each assumption explicitly and require a sealed enclosure for definite claims; its crate integration tests prove sign reversal, non-monotonicity, independent failures, refusal of estimates, continuation diagnoses, and reproducible identity." }, { specimen = "recipe/sim-physics/03-proof/certified-refinement", why = "Inspect event-exact meshing and runtime exports." }]
+
+[[feature]]
+id = "feature/sim-physics/no-energy-selection"
+title = "Proof-backed no-energy-selection audit"
+summary = "Refuse selection, ranking, sizing, and control inputs influenced by energy-derived observations, including laundering through dimension changes and opaque code."
+owner = "crate/sim-lib-physics-influence"
+audiences = ["code", "framework", "user"]
+guidance = "Compose the one generic sim-incremental-core dataflow engine. Declare every study operation and dependency, treat unchecked native transforms as Unknown, and admit a SelectionInput only from the resulting clean completion proof. There is no capability override."
+claims_anchors = ["anchor/crate/sim-lib-physics-influence"]
+claims_specimens = ["spec-test/sim-physics/crates/sim-lib-physics-influence/tests/influence", "recipe/sim-physics/04-influence/refused-selection"]
+composes = ["feature/sim-runtime/incremental-query-core", "crate/sim-kernel", "crate/sim-shape"]
+
+[[route]]
+id = "route/refuse-energy-influenced-selection"
+task = "Prove that a physical-study selection input is independent of energy"
+audiences = ["code", "framework", "user"]
+steps = [{ feature = "feature/sim-runtime/incremental-query-core", why = "Reuse its admitted lattices, content-identified graph, bounded fixpoint, continuation, incremental invalidation, explanations, and completion proof." }, { feature = "feature/sim-physics/no-energy-selection", why = "Apply the fail-closed influence domain, protected sinks, native type-state, and runtime Shape preparation." }, { specimen = "spec-test/sim-physics/crates/sim-lib-physics-influence/tests/influence", why = "Prove direct and laundered influence, branches, joins, loops, opaque code, clean preparation, budget refusal, and incremental edits." }, { specimen = "recipe/sim-physics/04-influence/refused-selection", why = "Run a divide-by-time laundering refusal and inspect its causal path." }]

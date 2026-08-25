@@ -1,0 +1,8 @@
+id = "refused-selection"
+title = "Refuse energy-influenced selection"
+codec = "rust"
+setup = "src/main.rs"
+purpose = "README.md"
+order = 50
+tags = ["physics", "energy", "dataflow", "selection", "audit"]
+requires = ["sim-lib-physics-influence"]

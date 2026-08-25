@@ -1,0 +1,8 @@
+[package]
+name = "physics-refused-selection-recipe"
+version = "0.1.0"
+edition.workspace = true
+publish = false
+[dependencies]
+sim-incremental-core = "0.1.2"
+sim-lib-physics-influence = { path = "../../../crates/sim-lib-physics-influence" }

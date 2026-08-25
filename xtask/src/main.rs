@@ -22,6 +22,7 @@ fn check_recipes() -> Result<(), String> {
         "recipes/01-power/switched-two-port/Cargo.toml",
         "recipes/02-audit/stored-energy/Cargo.toml",
         "recipes/03-proof/certified-refinement/Cargo.toml",
+        "recipes/04-influence/refused-selection/Cargo.toml",
     ];
     for manifest in recipes {
         let status = std::process::Command::new("cargo")
