@@ -9,6 +9,28 @@ code = "strict"
 [enforcement.route]
 major_entrypoints = "strict"
 frameworks = "strict"
+
+[[feature]]
+id = "feature/sim-physics/self-contained-analytic-studies"
+title = "Self-contained analytic electrical and impact studies"
+summary = "Compose event-split conjugate-port work, independent stores, clean selection, refinement, certified thresholds, replay envelopes, and polynomial modal roots in checked synthetic studies with independently derived equations."
+owner = "crate/sim-lib-physics-study"
+audiences = ["code", "framework", "user"]
+guidance = "Start with the checked analytic studies when auditing a switched electrical boundary or a mechanical impact. Preserve one-sided events and impulses, retain provider identities and exact bits, and compare refinements against the equations printed in the specimen rather than an opaque fixture. The known untested region is distributed field/contact discretization; these specimens cover lumped analytic systems only."
+claims_anchors = ["anchor/crate/sim-lib-physics-study"]
+claims_specimens = ["spec-test/sim-physics/crates/sim-lib-physics-core/tests/analytic_study_routes"]
+
+[[route]]
+id = "route/audit-analytic-switched-electrical-study"
+task = "Audit a switched lumped electrical study against independent equations"
+audiences = ["code", "framework", "user"]
+steps = [{ feature = "feature/sim-physics/self-contained-analytic-studies", why = "The cross-layer integration suite proves two oriented voltage/current ports, a discontinuity, terminal event, stiff interval, independent stores, refinement contraction, and a certified threshold." }, { specimen = "spec-test/sim-physics/crates/sim-lib-physics-core/tests/analytic_study_routes", why = "Check the independently derived public switched-network work law, then run the repository's analytic_studies integration target for the full composition and metamorphic cases." }]
+
+[[route]]
+id = "route/audit-analytic-mechanical-impact"
+task = "Audit a mechanical contact impulse with momentum and work equations"
+audiences = ["code", "framework", "user"]
+steps = [{ feature = "feature/sim-physics/self-contained-analytic-studies", why = "The cross-layer integration suite retains one-sided impact states, an explicit impulse, independent kinetic stores, clean selection inputs, and momentum/work identities." }, { specimen = "spec-test/sim-physics/crates/sim-lib-physics-core/tests/analytic_study_routes", why = "Check the independently derived public momentum and kinetic-work laws, then run the repository's analytic_studies integration target for provider envelopes and polynomial modal composition." }]
 [[feature]]
 id = "feature/sim-physics/model-adapter-conformance"
 title = "Fail-closed model adapter conformance"
@@ -17,7 +39,6 @@ owner = "crate/sim-lib-physics-adapter"
 guidance = "Implement this contract in the domain repository. Require validate_lumped_audit only when an explicit conjugate effort/flow boundary exists; wave amplitude-squared is an observation, never an inferred port."
 claims_anchors = ["anchor/crate/sim-lib-physics-adapter"]
 claims_specimens = ["spec-test/sim-physics/crates/sim-lib-physics-adapter/tests/conformance"]
-composes = ["crate/sim-lib-numbers-quantity", "crate/sim-lib-physics-core"]
 
 [[route]]
 id = "route/adapt-domain-model-to-physics-audit"

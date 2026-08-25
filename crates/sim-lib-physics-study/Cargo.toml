@@ -17,7 +17,16 @@ sha2 = "0.10"
 
 [dev-dependencies]
 sim-incremental-core = { version = "0.1.2" }
+sim-lib-numbers-interval = { path = "../../../sim-numbers/crates/sim-lib-numbers-interval", version = "0.1.0" }
+sim-lib-numbers-poly = { path = "../../../sim-numbers/crates/sim-lib-numbers-poly", version = "0.1.0" }
+sim-lib-physics-core = { path = "../sim-lib-physics-core", version = "0.1.0" }
+sim-lib-physics-power = { path = "../sim-lib-physics-power", version = "0.1.0" }
+sim-lib-physics-proof = { path = "../sim-lib-physics-proof", version = "0.1.0" }
 sim-shape = { version = "0.2.4" }
 
 [lints]
 workspace = true
+
+[[test]]
+name = "analytic_studies"
+path = "tests/analytic_studies.rs"
