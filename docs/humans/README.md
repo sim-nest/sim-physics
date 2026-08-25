@@ -17,6 +17,7 @@ This generated lane consumes `docs/generated/sim-index-fragment.sx`. Global inde
 
 | Feature | Subject | Specimens | Summary |
 | --- | --- | ---: | --- |
+| `feature/sim-physics/loadable-runtime-composition` | `crate/sim-lib-physics-runtime` | 0 | Projects independently selectable physics layer surfaces through the ordinary SIM Lib contract. |
 | `feature/sim-physics/self-contained-analytic-studies` | `crate/sim-lib-physics-study` | 1 | Compose event-split conjugate-port work, independent stores, clean selection, refinement, certified thresholds, replay envelopes, and polynomial modal roots in checked synthetic studies with independently derived equations. |
 | `feature/sim-physics/model-adapter-conformance` | `crate/sim-lib-physics-adapter` | 1 | Lower domain results into stable identities, semantic observations, explicit boundaries, influences, and separated model/solver evidence without upward domain coupling. |
 | `feature/sim-physics/boundary-event-core` | `crate/sim-lib-physics-core` | 1 | Validate immutable boundaries, stores, declared ports, semantic time spans, ordered events, and signed-power transfers before solving. |

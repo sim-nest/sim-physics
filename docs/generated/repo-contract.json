@@ -48,6 +48,7 @@
       "sim-lib-physics-influence",
       "sim-lib-physics-power",
       "sim-lib-physics-proof",
+      "sim-lib-physics-runtime",
       "sim-lib-physics-study",
       "switched-two-port",
       "xtask"
@@ -55,7 +56,7 @@
   },
   "non_citizen_exemption_count": 0,
   "non_citizen_exemptions": [],
-  "package_count": 16,
+  "package_count": 17,
   "packages": [
     {
       "crate_name": "boundary-event",
@@ -593,6 +594,191 @@
       ]
     },
     {
+      "crate_name": "sim_lib_physics_runtime",
+      "dependencies": [
+        {
+          "kind": "normal",
+          "optional": true,
+          "package": "sim-lib-physics-audit",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-physics-core",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": true,
+          "package": "sim-lib-physics-findings",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": true,
+          "package": "sim-lib-physics-influence",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": true,
+          "package": "sim-lib-physics-power",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": true,
+          "package": "sim-lib-physics-proof",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": true,
+          "package": "sim-lib-physics-study",
+          "rename": null,
+          "target": null
+        }
+      ],
+      "description": "Loadable composition of SIM physics surfaces without domain-policy duplication.",
+      "features": [
+        {
+          "edges": [
+            "power",
+            "dep:sim-lib-physics-audit"
+          ],
+          "name": "audit",
+          "workspace_edges": [
+            {
+              "feature": null,
+              "package": "sim-lib-physics-audit"
+            }
+          ]
+        },
+        {
+          "edges": [],
+          "name": "core",
+          "workspace_edges": []
+        },
+        {
+          "edges": [
+            "core"
+          ],
+          "name": "default",
+          "workspace_edges": []
+        },
+        {
+          "edges": [
+            "study",
+            "dep:sim-lib-physics-findings"
+          ],
+          "name": "findings",
+          "workspace_edges": [
+            {
+              "feature": null,
+              "package": "sim-lib-physics-findings"
+            }
+          ]
+        },
+        {
+          "edges": [
+            "proof",
+            "findings"
+          ],
+          "name": "full",
+          "workspace_edges": []
+        },
+        {
+          "edges": [
+            "dep:sim-lib-physics-influence"
+          ],
+          "name": "influence",
+          "workspace_edges": [
+            {
+              "feature": null,
+              "package": "sim-lib-physics-influence"
+            }
+          ]
+        },
+        {
+          "edges": [
+            "dep:sim-lib-physics-power"
+          ],
+          "name": "power",
+          "workspace_edges": [
+            {
+              "feature": null,
+              "package": "sim-lib-physics-power"
+            }
+          ]
+        },
+        {
+          "edges": [
+            "audit",
+            "dep:sim-lib-physics-proof"
+          ],
+          "name": "proof",
+          "workspace_edges": [
+            {
+              "feature": null,
+              "package": "sim-lib-physics-proof"
+            }
+          ]
+        },
+        {
+          "edges": [
+            "influence",
+            "dep:sim-lib-physics-study"
+          ],
+          "name": "study",
+          "workspace_edges": [
+            {
+              "feature": null,
+              "package": "sim-lib-physics-study"
+            }
+          ]
+        }
+      ],
+      "group": "workspace",
+      "manifest": "crates/sim-lib-physics-runtime/Cargo.toml",
+      "name": "sim-lib-physics-runtime",
+      "publish": "true",
+      "root": "crates/sim-lib-physics-runtime",
+      "rustdoc_summary": "Loadable composition for the SIM physics stack.",
+      "target_kinds": [
+        "lib",
+        "test"
+      ],
+      "targets": [
+        {
+          "crate_types": [
+            "lib"
+          ],
+          "kind": [
+            "lib"
+          ],
+          "name": "sim_lib_physics_runtime",
+          "src": "crates/sim-lib-physics-runtime/src/lib.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "runtime",
+          "src": "crates/sim-lib-physics-runtime/tests/runtime.rs"
+        }
+      ]
+    },
+    {
       "crate_name": "sim_lib_physics_study",
       "dependencies": [
         {
@@ -744,10 +930,10 @@
     "generated_by": "cargo run -p xtask -- simdoc",
     "generation_timestamp": "2026-08-25T05:11:30+02:00",
     "generator": "xtask repo-contract v1",
-    "git_commit": "daced4c6dbc1be234e16e529c7daa86c8df3b026",
+    "git_commit": "58172b0bcdf879d00120a0cf5cde757dd413ab4c",
     "repo": "sim-physics",
     "schema": "sim.provenance.v1",
-    "source_commit": "daced4c6dbc1be234e16e529c7daa86c8df3b026",
+    "source_commit": "58172b0bcdf879d00120a0cf5cde757dd413ab4c",
     "source_remote": "https://github.com/sim-nest/sim-physics",
     "validation_commands": [
       "cargo fmt --all --check",
@@ -760,9 +946,9 @@
       "cargo run -p xtask -- validation-matrix --check --repo .",
       "cargo run -p xtask -- crate-catalog --check --repo ."
     ],
-    "workspace_hash": "a645756dfb9e53bc",
+    "workspace_hash": "8e4ae820036b4a53",
     "workspace_hash_algorithm": "fnv1a64",
-    "workspace_hash_input_count": 46,
+    "workspace_hash_input_count": 49,
     "workspace_hash_inputs": [
       "Cargo.toml",
       "crates/sim-lib-physics-adapter/Cargo.toml",
@@ -789,6 +975,9 @@
       "crates/sim-lib-physics-proof/Cargo.toml",
       "crates/sim-lib-physics-proof/src/lib.rs",
       "crates/sim-lib-physics-proof/tests/proof.rs",
+      "crates/sim-lib-physics-runtime/Cargo.toml",
+      "crates/sim-lib-physics-runtime/src/lib.rs",
+      "crates/sim-lib-physics-runtime/tests/runtime.rs",
       "crates/sim-lib-physics-study/Cargo.toml",
       "crates/sim-lib-physics-study/src/lib.rs",
       "crates/sim-lib-physics-study/tests/analytic_studies.rs",

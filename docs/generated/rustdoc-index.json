@@ -93,6 +93,13 @@
       "summary": "Orthogonal refinement and certified model verdicts."
     },
     {
+      "crate_name": "sim_lib_physics_runtime",
+      "group": "workspace",
+      "manifest": "crates/sim-lib-physics-runtime/Cargo.toml",
+      "package": "sim-lib-physics-runtime",
+      "summary": "Loadable composition for the SIM physics stack."
+    },
+    {
       "crate_name": "sim_lib_physics_study",
       "group": "workspace",
       "manifest": "crates/sim-lib-physics-study/Cargo.toml",

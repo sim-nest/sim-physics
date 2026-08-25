@@ -1,0 +1,38 @@
+[package]
+name = "sim-lib-physics-runtime"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+description = "Loadable composition of SIM physics surfaces without domain-policy duplication."
+readme = "README.md"
+repository.workspace = true
+homepage.workspace = true
+publish = true
+
+[dependencies]
+sim-kernel = { version = "0.2.1" }
+sim-lib-physics-core = { version = "0.1.0", path = "../sim-lib-physics-core" }
+sim-lib-physics-power = { version = "0.1.0", path = "../sim-lib-physics-power", optional = true }
+sim-lib-physics-audit = { version = "0.1.0", path = "../sim-lib-physics-audit", optional = true }
+sim-lib-physics-proof = { version = "0.1.0", path = "../sim-lib-physics-proof", optional = true }
+sim-lib-physics-influence = { version = "0.1.0", path = "../sim-lib-physics-influence", optional = true }
+sim-lib-physics-study = { version = "0.1.0", path = "../sim-lib-physics-study", optional = true }
+sim-lib-physics-findings = { version = "0.1.0", path = "../sim-lib-physics-findings", optional = true }
+
+[features]
+default = ["core"]
+core = []
+power = ["dep:sim-lib-physics-power"]
+audit = ["power", "dep:sim-lib-physics-audit"]
+proof = ["audit", "dep:sim-lib-physics-proof"]
+influence = ["dep:sim-lib-physics-influence"]
+study = ["influence", "dep:sim-lib-physics-study"]
+findings = ["study", "dep:sim-lib-physics-findings"]
+full = ["proof", "findings"]
+
+[lints]
+workspace = true
+
+[[test]]
+name = "runtime"
+path = "tests/runtime.rs"

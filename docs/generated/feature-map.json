@@ -75,6 +75,108 @@
       "package": "sim-lib-physics-proof"
     },
     {
+      "features": [
+        {
+          "edges": [
+            "power",
+            "dep:sim-lib-physics-audit"
+          ],
+          "name": "audit",
+          "workspace_edges": [
+            {
+              "feature": null,
+              "package": "sim-lib-physics-audit"
+            }
+          ]
+        },
+        {
+          "edges": [],
+          "name": "core",
+          "workspace_edges": []
+        },
+        {
+          "edges": [
+            "core"
+          ],
+          "name": "default",
+          "workspace_edges": []
+        },
+        {
+          "edges": [
+            "study",
+            "dep:sim-lib-physics-findings"
+          ],
+          "name": "findings",
+          "workspace_edges": [
+            {
+              "feature": null,
+              "package": "sim-lib-physics-findings"
+            }
+          ]
+        },
+        {
+          "edges": [
+            "proof",
+            "findings"
+          ],
+          "name": "full",
+          "workspace_edges": []
+        },
+        {
+          "edges": [
+            "dep:sim-lib-physics-influence"
+          ],
+          "name": "influence",
+          "workspace_edges": [
+            {
+              "feature": null,
+              "package": "sim-lib-physics-influence"
+            }
+          ]
+        },
+        {
+          "edges": [
+            "dep:sim-lib-physics-power"
+          ],
+          "name": "power",
+          "workspace_edges": [
+            {
+              "feature": null,
+              "package": "sim-lib-physics-power"
+            }
+          ]
+        },
+        {
+          "edges": [
+            "audit",
+            "dep:sim-lib-physics-proof"
+          ],
+          "name": "proof",
+          "workspace_edges": [
+            {
+              "feature": null,
+              "package": "sim-lib-physics-proof"
+            }
+          ]
+        },
+        {
+          "edges": [
+            "influence",
+            "dep:sim-lib-physics-study"
+          ],
+          "name": "study",
+          "workspace_edges": [
+            {
+              "feature": null,
+              "package": "sim-lib-physics-study"
+            }
+          ]
+        }
+      ],
+      "group": "workspace",
+      "package": "sim-lib-physics-runtime"
+    },
+    {
       "features": [],
       "group": "workspace",
       "package": "sim-lib-physics-study"

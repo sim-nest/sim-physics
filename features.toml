@@ -11,6 +11,19 @@ major_entrypoints = "strict"
 frameworks = "strict"
 
 [[feature]]
+id = "feature/sim-physics/loadable-runtime-composition"
+title = "Loadable layered physics composition"
+summary = "Projects independently selectable physics layer surfaces through the ordinary SIM Lib contract."
+owner = "crate/sim-lib-physics-runtime"
+guidance = "Enable only the required layer. Core does not imply proof methods, adapters, FEMM, interference, or remote placement; the runtime crate composes metadata and never duplicates domain behavior."
+claims_anchors = ["anchor/crate/sim-lib-physics-runtime"]
+
+[[route]]
+id = "route/load-physics-stack"
+task = "Load independently selectable physics layers through an ordinary SIM host library"
+steps = [{ feature = "feature/sim-physics/loadable-runtime-composition", why = "Select the narrow layer closure and load its Cards through the kernel Lib contract; the crate's runtime integration test checks manifest/export identity." }]
+
+[[feature]]
 id = "feature/sim-physics/self-contained-analytic-studies"
 title = "Self-contained analytic electrical and impact studies"
 summary = "Compose event-split conjugate-port work, independent stores, clean selection, refinement, certified thresholds, replay envelopes, and polynomial modal roots in checked synthetic studies with independently derived equations."
