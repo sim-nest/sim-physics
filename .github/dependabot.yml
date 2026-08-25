@@ -1,0 +1,18 @@
+version: 2
+# Dependabot tracks external Cargo crates and GitHub Actions. Local sim-* crate
+# versions are coordinated by the workspace manifest.
+updates:
+  - package-ecosystem: cargo
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      external-cargo:
+        patterns: ["*"]
+    ignore:
+      - dependency-name: "sim-*"
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly

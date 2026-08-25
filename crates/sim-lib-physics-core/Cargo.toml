@@ -1,0 +1,16 @@
+[package]
+name = "sim-lib-physics-core"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+description = "Immutable boundary and event graph contracts for lumped physical systems."
+readme = "README.md"
+repository.workspace = true
+homepage.workspace = true
+publish = true
+
+[dependencies]
+sim-lib-numbers-quantity = { path = "../../../sim-numbers/crates/sim-lib-numbers-quantity", version = "0.1.0" }
+
+[lints]
+workspace = true

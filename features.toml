@@ -1,0 +1,27 @@
+schema = "sim.features"
+[enforcement.audience]
+code = "strict"
+framework = "strict"
+[enforcement.specimen]
+user = "strict"
+framework = "strict"
+code = "strict"
+[enforcement.route]
+major_entrypoints = "strict"
+frameworks = "strict"
+[[feature]]
+id = "feature/sim-physics/boundary-event-core"
+title = "Lumped-system boundary and event core"
+summary = "Validate immutable boundaries, stores, declared ports, semantic time spans, ordered events, and signed-power transfers before solving."
+owner = "crate/sim-lib-physics-core"
+audiences = ["code", "framework", "user"]
+guidance = "Use this core for lumped dynamic studies. Compose sim-numbers quantities and existing Shape, content-id, Claim, read-construct, cookbook, and Index contracts; keep numerical methods, field solvers, scheduling, persistence, codecs, effects, and kernel types in their owners."
+claims_anchors = ["anchor/crate/sim-lib-physics-core", "anchor/crate/boundary-event"]
+claims_specimens = ["spec-test/sim-physics/crates/sim-lib-physics-core/tests/boundary_event"]
+composes = ["crate/sim-lib-numbers-quantity", "crate/sim-shape", "crate/sim-kernel", "crate/sim-cookbook", "crate/sim-index-core"]
+[[route]]
+id = "route/model-lumped-boundary-events"
+task = "Model a lumped dynamic system with explicit boundaries and events"
+audiences = ["code", "framework", "user"]
+steps = [{ feature = "feature/sim-physics/boundary-event-core", why = "The core owns solve-independent topology and signed-power boundary validation." }, { specimen = "spec-test/sim-physics/crates/sim-lib-physics-core/tests/boundary_event", why = "The specimen proves canonical identity, simultaneous events, and fail-closed topology." }]
+
