@@ -1,4 +1,3 @@
 # Physics that states its boundary
 
-Build lumped-system studies on reviewable facts. `sim-physics` makes stores, ports, event order, simultaneous events, state influence, and signed-power crossings immutable data, then rejects incomplete topology before a solver sees it. Start with the checked boundary-event recipe.
-
+Build lumped-system studies on reviewable facts. `sim-physics` makes stores, ports, event order, simultaneous events, state influence, and signed-power crossings immutable data, then rejects incomplete topology before a solver sees it. Conjugate electrical, translational, rotational, fluid, and Shape-admitted user ports declare boundary orientation once; work audits retain each port's signed continuous integral, event-split segments, method evidence, and uncertainty while keeping impulses separate. Start with the checked boundary-event and switched-two-port recipes.

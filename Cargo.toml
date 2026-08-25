@@ -1,6 +1,12 @@
 [workspace]
 resolver = "3"
-members = ["crates/sim-lib-physics-core", "recipes/00-overview/boundary-event", "xtask"]
+members = [
+    "crates/sim-lib-physics-core",
+    "crates/sim-lib-physics-power",
+    "recipes/00-overview/boundary-event",
+    "recipes/01-power/switched-two-port",
+    "xtask",
+]
 
 [workspace.package]
 edition = "2024"

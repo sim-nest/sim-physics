@@ -24,4 +24,18 @@ id = "route/model-lumped-boundary-events"
 task = "Model a lumped dynamic system with explicit boundaries and events"
 audiences = ["code", "framework", "user"]
 steps = [{ feature = "feature/sim-physics/boundary-event-core", why = "The core owns solve-independent topology and signed-power boundary validation." }, { specimen = "spec-test/sim-physics/crates/sim-lib-physics-core/tests/boundary_event", why = "The specimen proves canonical identity, simultaneous events, and fail-closed topology." }]
-
+[[feature]]
+id = "feature/sim-physics/conjugate-port-work"
+title = "Conjugate ports and event-split signed work"
+summary = "Declare boundary-relative effort/flow pairs and audit continuous work per port while retaining event impulses separately."
+owner = "crate/sim-lib-physics-power"
+audiences = ["code", "framework", "user"]
+guidance = "Compose physics boundary identities, sim-numbers quantity Shapes and trajectory/quadrature owners. Declare orientation once, split at every event, retain per-port method evidence, and never encode an impulse as sampled power."
+claims_anchors = ["anchor/crate/sim-lib-physics-power", "anchor/crate/switched-two-port"]
+claims_specimens = ["spec-test/sim-physics/crates/sim-lib-physics-power/tests/work"]
+composes = ["crate/sim-lib-physics-core", "crate/sim-lib-numbers-quantity", "crate/sim-lib-numbers-numeric", "crate/sim-lib-numbers-quad"]
+[[route]]
+id = "route/audit-conjugate-port-work"
+task = "Audit signed continuous and impulsive work across physical boundaries"
+audiences = ["code", "framework", "user"]
+steps = [{ feature = "feature/sim-physics/boundary-event-core", why = "Declare the boundary and crossing port identities." }, { feature = "feature/sim-physics/conjugate-port-work", why = "Pair effort and flow, orient the port, split continuous work at events, and retain impulses separately." }, { specimen = "spec-test/sim-physics/crates/sim-lib-physics-power/tests/work", why = "The specimen proves analytic domains, orientation, discontinuities, simultaneous events, and pure impulses." }, { recipe = "recipe/sim-physics/switched-two-port", why = "Run a switched electrical-to-mechanical two-port audit." }]

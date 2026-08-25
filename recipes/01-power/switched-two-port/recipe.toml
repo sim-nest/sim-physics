@@ -1,0 +1,8 @@
+id = "switched-two-port"
+title = "Switched two-port work audit"
+codec = "rust"
+setup = "src/main.rs"
+purpose = "README.md"
+order = 20
+tags = ["physics", "power", "events", "work"]
+requires = ["sim-lib-physics-power"]

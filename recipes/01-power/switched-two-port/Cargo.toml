@@ -1,0 +1,8 @@
+[package]
+name = "switched-two-port"
+version = "0.1.0"
+edition = "2024"
+publish = false
+[dependencies]
+sim-lib-physics-power = { path = "../../../crates/sim-lib-physics-power" }
+sim-lib-physics-core = { path = "../../../crates/sim-lib-physics-core" }
