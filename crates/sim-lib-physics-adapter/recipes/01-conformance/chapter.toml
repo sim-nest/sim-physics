@@ -1,0 +1,3 @@
+title = "Fail-closed conformance"
+order = 10
+summary = "Stable identity, boundary completeness, evidence separation, influence propagation, and missing-port refusal."

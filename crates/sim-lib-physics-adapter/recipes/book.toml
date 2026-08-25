@@ -1,0 +1,4 @@
+book = "physics-model-adapters"
+title = "Physics Model Adapter Recipes"
+summary = "Validate domain model records before a common audit."
+chapters = ["01-conformance"]

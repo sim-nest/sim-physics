@@ -10,6 +10,21 @@ code = "strict"
 major_entrypoints = "strict"
 frameworks = "strict"
 [[feature]]
+id = "feature/sim-physics/model-adapter-conformance"
+title = "Fail-closed model adapter conformance"
+summary = "Lower domain results into stable identities, semantic observations, explicit boundaries, influences, and separated model/solver evidence without upward domain coupling."
+owner = "crate/sim-lib-physics-adapter"
+guidance = "Implement this contract in the domain repository. Require validate_lumped_audit only when an explicit conjugate effort/flow boundary exists; wave amplitude-squared is an observation, never an inferred port."
+claims_anchors = ["anchor/crate/sim-lib-physics-adapter"]
+claims_specimens = ["spec-test/sim-physics/crates/sim-lib-physics-adapter/tests/conformance"]
+composes = ["crate/sim-lib-numbers-quantity", "crate/sim-lib-physics-core"]
+
+[[route]]
+id = "route/adapt-domain-model-to-physics-audit"
+task = "Feed a domain model into a physics audit without coupling physics to the domain"
+steps = [{ feature = "feature/sim-physics/model-adapter-conformance", why = "Validate identities, boundary completeness, quantities, evidence, and influences." }, { specimen = "spec-test/sim-physics/crates/sim-lib-physics-adapter/tests/conformance", why = "Prove missing-port refusal and evidence/origin separation." }]
+
+[[feature]]
 id = "feature/sim-physics/boundary-event-core"
 title = "Lumped-system boundary and event core"
 summary = "Validate immutable boundaries, stores, declared ports, semantic time spans, ordered events, and signed-power transfers before solving."

@@ -8,6 +8,7 @@ members = [
     "crates/sim-lib-physics-influence",
     "crates/sim-lib-physics-study",
     "crates/sim-lib-physics-findings",
+    "crates/sim-lib-physics-adapter",
     "recipes/00-overview/boundary-event",
     "recipes/01-power/switched-two-port",
     "recipes/02-audit/stored-energy",
