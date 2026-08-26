@@ -1,4 +1,23 @@
 schema = "sim.features"
+
+[[feature]]
+id = "feature/sim-physics/generated-docs"
+title = "Generated physics contracts"
+summary = "Emit checked package, card, rustdoc, and SIM Index contracts for physics libraries and specimens."
+owner = "crate/xtask"
+guidance = "Run the repository simdoc command after source facts or authored feature metadata changes; generated artifacts are projections and must never be edited by hand."
+claims_anchors = [
+  "anchor/cli/xtask",
+  "anchor/crate/xtask",
+  "anchor/doc/generated/card-index",
+  "anchor/doc/generated/feature-map",
+  "anchor/doc/generated/provenance",
+  "anchor/doc/generated/repo-contract",
+  "anchor/doc/generated/rustdoc-index",
+  "anchor/doc/generated/sim-index-fragment",
+]
+claims_surfaces = ["cli/xtask"]
+
 [enforcement.audience]
 code = "strict"
 framework = "strict"
@@ -16,7 +35,7 @@ title = "Loadable layered physics composition"
 summary = "Projects independently selectable physics layer surfaces through the ordinary SIM Lib contract."
 owner = "crate/sim-lib-physics-runtime"
 guidance = "Enable only the required layer. Core does not imply proof methods, adapters, FEMM, interference, or remote placement; the runtime crate composes metadata and never duplicates domain behavior."
-claims_anchors = ["anchor/crate/sim-lib-physics-runtime"]
+claims_anchors = ["anchor/crate/sim-lib-physics-runtime", "anchor/runtime-lib/sim-lib-physics-runtime/physics-runtime-lib"]
 
 [[route]]
 id = "route/load-physics-stack"
@@ -31,7 +50,10 @@ owner = "crate/sim-lib-physics-study"
 audiences = ["code", "framework", "user"]
 guidance = "Start with the checked analytic studies when auditing a switched electrical boundary or a mechanical impact. Preserve one-sided events and impulses, retain provider identities and exact bits, and compare refinements against the equations printed in the specimen rather than an opaque fixture. The known untested region is distributed field/contact discretization; these specimens cover lumped analytic systems only."
 claims_anchors = ["anchor/crate/sim-lib-physics-study"]
-claims_specimens = ["spec-test/sim-physics/crates/sim-lib-physics-core/tests/boundary_event"]
+claims_specimens = [
+  "spec-test/sim-physics/crates/sim-lib-physics-core/tests/analytic_study_routes",
+  "spec-test/sim-physics/crates/sim-lib-physics-study/tests/analytic_studies",
+]
 
 [[route]]
 id = "route/audit-analytic-switched-electrical-study"
@@ -65,7 +87,7 @@ summary = "Validate immutable boundaries, stores, declared ports, semantic time 
 owner = "crate/sim-lib-physics-core"
 audiences = ["code", "framework", "user"]
 guidance = "Use this core for lumped dynamic studies. Compose sim-numbers quantities and existing Shape, content-id, Claim, read-construct, cookbook, and Index contracts; keep numerical methods, field solvers, scheduling, persistence, codecs, effects, and kernel types in their owners."
-claims_anchors = ["anchor/crate/sim-lib-physics-core"]
+claims_anchors = ["anchor/crate/boundary-event", "anchor/crate/sim-lib-physics-core"]
 claims_specimens = ["spec-test/sim-physics/crates/sim-lib-physics-core/tests/boundary_event"]
 composes = ["crate/sim-lib-numbers-quantity"]
 [[route]]
@@ -80,7 +102,7 @@ summary = "Declare boundary-relative effort/flow pairs and audit continuous work
 owner = "crate/sim-lib-physics-power"
 audiences = ["code", "framework", "user"]
 guidance = "Compose physics boundary identities, sim-numbers quantity Shapes and trajectory/quadrature owners. Declare orientation once, split at every event, retain per-port method evidence, and never encode an impulse as sampled power."
-claims_anchors = ["anchor/crate/sim-lib-physics-power"]
+claims_anchors = ["anchor/crate/sim-lib-physics-power", "anchor/crate/switched-two-port"]
 claims_specimens = ["spec-test/sim-physics/crates/sim-lib-physics-power/tests/work"]
 composes = ["crate/sim-lib-physics-core", "crate/sim-lib-numbers-quantity"]
 [[route]]
@@ -95,7 +117,7 @@ summary = "Evaluate endpoint stores independently and preserve typed residual an
 owner = "crate/sim-lib-physics-audit"
 audiences = ["code", "framework", "user"]
 guidance = "Compose the boundary and signed-work owners with constitutive endpoint evaluators. Keep every port and event term, declare reduction and uncertainty combination rules, and report energy discrepancy as an observation rather than dissipation."
-claims_anchors = ["anchor/crate/sim-lib-physics-audit"]
+claims_anchors = ["anchor/crate/physics-stored-energy-recipe", "anchor/crate/sim-lib-physics-audit"]
 claims_specimens = ["spec-test/sim-physics/crates/sim-lib-physics-audit/tests/audit"]
 composes = ["crate/sim-lib-physics-core", "crate/sim-lib-physics-power", "crate/sim-lib-numbers-method", "crate/sim-lib-numbers-quantity", "crate/sim-kernel"]
 [[route]]
@@ -110,7 +132,7 @@ summary = "Refine independent numerical and model axes, retain signed comparison
 owner = "crate/sim-lib-physics-proof"
 audiences = ["code", "framework", "user"]
 guidance = "Compose physics audit evidence with sim-numbers interval, extended-precision, and method layers. Keep all six refinement axes and threshold lanes explicit; refinement spreads are estimates and cannot certify a verdict."
-claims_anchors = ["anchor/crate/sim-lib-physics-proof"]
+claims_anchors = ["anchor/crate/physics-certified-refinement-recipe", "anchor/crate/sim-lib-physics-proof"]
 claims_specimens = ["recipe/sim-physics/03-proof/certified-refinement"]
 composes = ["crate/sim-lib-physics-audit", "crate/sim-lib-numbers-interval", "crate/sim-lib-numbers-extended", "crate/sim-lib-numbers-method"]
 [[route]]
@@ -126,7 +148,7 @@ summary = "Refuse selection, ranking, sizing, and control inputs influenced by e
 owner = "crate/sim-lib-physics-influence"
 audiences = ["code", "framework", "user"]
 guidance = "Compose the one generic sim-incremental-core dataflow engine. Declare every study operation and dependency, treat unchecked native transforms as Unknown, and admit a SelectionInput only from the resulting clean completion proof. There is no capability override."
-claims_anchors = ["anchor/crate/sim-lib-physics-influence"]
+claims_anchors = ["anchor/crate/physics-refused-selection-recipe", "anchor/crate/sim-lib-physics-influence"]
 claims_specimens = ["recipe/sim-physics/04-influence/refused-selection"]
 composes = ["crate/sim-incremental-core", "crate/sim-kernel"]
 
@@ -143,8 +165,8 @@ summary = "Review semantic sweep plans before execution and retain sampling, par
 owner = "crate/sim-lib-physics-study"
 audiences = ["code", "framework", "user"]
 guidance = "Use StudyPlan for parameter studies that must bind model and content identity, boundary/event graph, initial state, methods, refinements, semantic quantity Shapes, exact boundary cases, statistical partitions, outputs, limits, seed, policies, and placement before execution. Grid, Latin, and Sobol designs compose the canonical stats evidence. Submit independent points through realize_sweep and EvalFabric; do not add a scheduler, executor, transport, site, or Tensor fork. Require SelectionInput for selection and attach energy Observations only after choosing. Preserve refused, interrupted, and unknown outcomes without inferring retry safety from lost contact."
-claims_anchors = ["anchor/crate/sim-lib-physics-study"]
 claims_specimens = ["recipe/sim-physics/05-study/placement-sweep"]
+claims_anchors = ["anchor/crate/physics-placement-sweep-recipe"]
 composes = ["crate/sim-lib-numbers-stats", "feature/sim-physics/no-energy-selection", "crate/sim-kernel"]
 
 [[route]]
@@ -160,7 +182,7 @@ summary = "Store surprising observations and every successor by content identity
 owner = "crate/sim-lib-physics-findings"
 audiences = ["code", "framework", "user"]
 guidance = "Compose kernel ContentId and Claim with sim-table-core validated paths and an injected sim-storage HostDirPort. Append typed successors with new evidence; reconcile competing heads explicitly. Do not use a ledger, SQL, filesystem paths, mutable records, or last-writer-wins."
-claims_anchors = ["anchor/crate/sim-lib-physics-findings"]
+claims_anchors = ["anchor/crate/physics-sweep-to-finding-recipe", "anchor/crate/sim-lib-physics-findings"]
 claims_specimens = ["recipe/sim-physics/06-findings/sweep-to-finding"]
 composes = ["crate/sim-kernel", "crate/sim-table-core", "crate/sim-storage-port"]
 

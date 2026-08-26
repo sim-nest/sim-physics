@@ -1,3 +1,5 @@
+// conformance: analytic study routes expose independently checkable physical laws.
+
 //! Discoverable route anchors for the self-contained analytic studies.
 //! The cross-layer execution specimen lives with `sim-lib-physics-study`;
 //! these exact laws make the routed scientific questions independently

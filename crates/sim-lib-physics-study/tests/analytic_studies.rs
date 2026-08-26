@@ -1,3 +1,5 @@
+// conformance: analytic studies derive their expected values without external fixtures.
+
 //! Self-contained analytic studies. Every expected value follows from the
 //! equations below; no external corpus or generated fixture is an input.
 
