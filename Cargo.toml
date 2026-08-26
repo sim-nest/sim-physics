@@ -28,14 +28,3 @@ homepage = "https://github.com/sim-nest/sim-physics"
 
 [workspace.lints.rust]
 unsafe_code = "forbid"
-
-[patch.crates-io]
-sim-citizen-derive = { path = "../sim-citizen/crates/sim-citizen-derive" }
-sim-cookbook = { path = "../sim-foundation/crates/sim-cookbook" }
-sim-cookbook-build = { path = "../sim-foundation/crates/sim-cookbook-build" }
-sim-kernel = { path = "../sim-kernel" }
-sim-shape = { path = "../sim-shape" }
-sim-table-core = { path = "../sim-foundation/crates/sim-table-core" }
-sim-storage-port = { path = "../sim-storage/crates/sim-storage-port" }
-sim-incremental-core = { path = "../sim-runtime/crates/sim-incremental-core" }
-sim-lib-numbers-interval = { path = "../sim-numbers/crates/sim-lib-numbers-interval" }

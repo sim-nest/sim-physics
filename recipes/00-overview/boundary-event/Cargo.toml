@@ -5,4 +5,4 @@ edition="2024"
 publish=false
 [dependencies]
 sim-lib-physics-core={path="../../../crates/sim-lib-physics-core"}
-sim-lib-numbers-quantity={path="../../../../sim-numbers/crates/sim-lib-numbers-quantity"}
+sim-lib-numbers-quantity={ version = "0.1.0" }

@@ -11,8 +11,8 @@ publish = true
 
 [dependencies]
 sim-kernel = { version = "0.2.1" }
-sim-lib-numbers-method = { path = "../../../sim-numbers/crates/sim-lib-numbers-method", version = "0.1.0" }
-sim-lib-numbers-quantity = { path = "../../../sim-numbers/crates/sim-lib-numbers-quantity", version = "0.1.0" }
+sim-lib-numbers-method = { version = "0.1.0" }
+sim-lib-numbers-quantity = { version = "0.1.0" }
 sim-lib-physics-core = { path = "../sim-lib-physics-core", version = "0.1.0" }
 sim-lib-physics-power = { path = "../sim-lib-physics-power", version = "0.1.0" }
 
