@@ -10,8 +10,8 @@ homepage.workspace = true
 publish = true
 
 [dependencies]
-sim-incremental-core = { version = "0.1.2" }
-sim-kernel = { version = "0.2.1" }
+sim-incremental-core = { version = "0.2.0" }
+sim-kernel = { version = "0.3.0" }
 
 [lints]
 workspace = true

@@ -10,7 +10,7 @@ homepage.workspace = true
 publish = true
 
 [dependencies]
-sim-kernel = { version = "0.2.1" }
+sim-kernel = { version = "0.3.0" }
 sim-lib-numbers-method = { version = "0.1.0" }
 sim-lib-numbers-quantity = { version = "0.1.0" }
 sim-lib-physics-core = { path = "../sim-lib-physics-core", version = "0.1.0" }

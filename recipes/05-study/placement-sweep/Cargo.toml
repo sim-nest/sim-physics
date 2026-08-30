@@ -5,6 +5,6 @@ edition.workspace = true
 publish = false
 
 [dependencies]
-sim-kernel = { version = "0.2.1" }
+sim-kernel = { version = "0.3.0" }
 sim-lib-physics-study = { path = "../../../crates/sim-lib-physics-study" }
-sim-shape = { version = "0.2.4" }
+sim-shape = { version = "0.3.0" }

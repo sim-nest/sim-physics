@@ -5,5 +5,5 @@ edition = "2024"
 publish = false
 
 [dependencies]
-sim-kernel = "0.2.1"
+sim-kernel = "0.3.0"
 sim-lib-physics-findings = { path = "../../../crates/sim-lib-physics-findings" }

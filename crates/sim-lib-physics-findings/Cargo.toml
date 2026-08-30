@@ -11,8 +11,8 @@ publish = true
 
 [dependencies]
 sha2 = "0.10"
-sim-kernel = { version = "0.2.1" }
-sim-table-core = { version = "0.1.4" }
+sim-kernel = { version = "0.3.0" }
+sim-table-core = { version = "0.2.0" }
 sim-storage-port = { version = "0.1.0" }
 
 [lints]
