@@ -1,5 +1,7 @@
 # Physics that states its boundary
 
+In one line: auditable physical studies whose boundaries, energy balances, uncertainty, and evidence remain explicit.
+
 Build lumped-system studies on reviewable facts. `sim-physics` makes stores, ports, event order, simultaneous events, state influence, and signed-power crossings immutable data, then rejects incomplete topology before a solver sees it. Conjugate electrical, translational, rotational, fluid, and Shape-admitted user ports declare boundary orientation once; work audits retain each port's signed continuous integral, event-split segments, method evidence, and uncertainty while keeping impulses separate.
 
 The stored-energy audit evaluates both endpoint states independently, exposes the full balance equation, and preserves solver, quadrature, model, and energy residuals as non-interchangeable lanes. Numerical, parameter/model, and measurement uncertainty remain separate unless an explicit combination rule says otherwise. Every discrepancy survives as an observed, content-identified record: it is never clipped or silently renamed dissipation. Start with the checked boundary-event, switched-two-port, and stored-energy recipes.
