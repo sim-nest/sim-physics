@@ -2,6 +2,8 @@
 name = "switched-two-port"
 version = "0.1.0"
 edition = "2024"
+description = "SIM workspace package for switched two port."
+readme = "README.md"
 publish = false
 [dependencies]
 sim-lib-physics-power = { path = "../../../crates/sim-lib-physics-power" }

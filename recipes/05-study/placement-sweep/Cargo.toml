@@ -1,6 +1,8 @@
 [package]
 name = "physics-placement-sweep-recipe"
 version = "0.1.0"
+description = "SIM workspace package for physics placement sweep recipe."
+readme = "README.md"
 edition.workspace = true
 publish = false
 

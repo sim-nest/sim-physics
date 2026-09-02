@@ -1,0 +1,219 @@
+{
+  "generator": "xtask crate-catalog v1",
+  "package_count": 17,
+  "packages": [
+    {
+      "description": "Domain-neutral conformance contract for physics model adapters.",
+      "generated_readme": false,
+      "manifest": "crates/sim-lib-physics-adapter/Cargo.toml",
+      "name": "sim-lib-physics-adapter",
+      "publish": "true",
+      "readme": "crates/sim-lib-physics-adapter/README.md",
+      "root": "crates/sim-lib-physics-adapter",
+      "target_kinds": [
+        "lib",
+        "test"
+      ]
+    },
+    {
+      "description": "Independent stored-energy audits with typed residual and uncertainty lanes.",
+      "generated_readme": false,
+      "manifest": "crates/sim-lib-physics-audit/Cargo.toml",
+      "name": "sim-lib-physics-audit",
+      "publish": "true",
+      "readme": "crates/sim-lib-physics-audit/README.md",
+      "root": "crates/sim-lib-physics-audit",
+      "target_kinds": [
+        "lib",
+        "test"
+      ]
+    },
+    {
+      "description": "Immutable boundary and event graph contracts for lumped physical systems.",
+      "generated_readme": false,
+      "manifest": "crates/sim-lib-physics-core/Cargo.toml",
+      "name": "sim-lib-physics-core",
+      "publish": "true",
+      "readme": "crates/sim-lib-physics-core/README.md",
+      "root": "crates/sim-lib-physics-core",
+      "target_kinds": [
+        "lib",
+        "test"
+      ]
+    },
+    {
+      "description": "Immutable branch-preserving histories for physics findings.",
+      "generated_readme": false,
+      "manifest": "crates/sim-lib-physics-findings/Cargo.toml",
+      "name": "sim-lib-physics-findings",
+      "publish": "true",
+      "readme": "crates/sim-lib-physics-findings/README.md",
+      "root": "crates/sim-lib-physics-findings",
+      "target_kinds": [
+        "lib",
+        "test"
+      ]
+    },
+    {
+      "description": "Proof-producing no-energy-selection audit for physical studies.",
+      "generated_readme": false,
+      "manifest": "crates/sim-lib-physics-influence/Cargo.toml",
+      "name": "sim-lib-physics-influence",
+      "publish": "true",
+      "readme": "crates/sim-lib-physics-influence/README.md",
+      "root": "crates/sim-lib-physics-influence",
+      "target_kinds": [
+        "lib",
+        "test"
+      ]
+    },
+    {
+      "description": "Boundary-relative conjugate ports and event-split signed-work audits.",
+      "generated_readme": false,
+      "manifest": "crates/sim-lib-physics-power/Cargo.toml",
+      "name": "sim-lib-physics-power",
+      "publish": "true",
+      "readme": "crates/sim-lib-physics-power/README.md",
+      "root": "crates/sim-lib-physics-power",
+      "target_kinds": [
+        "lib",
+        "test"
+      ]
+    },
+    {
+      "description": "Orthogonal numerical refinement and certified model verdicts for physical studies.",
+      "generated_readme": false,
+      "manifest": "crates/sim-lib-physics-proof/Cargo.toml",
+      "name": "sim-lib-physics-proof",
+      "publish": "true",
+      "readme": "crates/sim-lib-physics-proof/README.md",
+      "root": "crates/sim-lib-physics-proof",
+      "target_kinds": [
+        "lib",
+        "test"
+      ]
+    },
+    {
+      "description": "Loadable composition of SIM physics surfaces without domain-policy duplication.",
+      "generated_readme": false,
+      "manifest": "crates/sim-lib-physics-runtime/Cargo.toml",
+      "name": "sim-lib-physics-runtime",
+      "publish": "true",
+      "readme": "crates/sim-lib-physics-runtime/README.md",
+      "root": "crates/sim-lib-physics-runtime",
+      "target_kinds": [
+        "lib",
+        "test"
+      ]
+    },
+    {
+      "description": "Immutable physics study plans and placement-transparent sweep evidence.",
+      "generated_readme": false,
+      "manifest": "crates/sim-lib-physics-study/Cargo.toml",
+      "name": "sim-lib-physics-study",
+      "publish": "true",
+      "readme": "crates/sim-lib-physics-study/README.md",
+      "root": "crates/sim-lib-physics-study",
+      "target_kinds": [
+        "lib",
+        "test"
+      ]
+    },
+    {
+      "description": "SIM workspace package for boundary event.",
+      "generated_readme": false,
+      "manifest": "recipes/00-overview/boundary-event/Cargo.toml",
+      "name": "boundary-event",
+      "publish": "false",
+      "readme": "recipes/00-overview/boundary-event/README.md",
+      "root": "recipes/00-overview/boundary-event",
+      "target_kinds": [
+        "bin"
+      ]
+    },
+    {
+      "description": "SIM workspace package for switched two port.",
+      "generated_readme": false,
+      "manifest": "recipes/01-power/switched-two-port/Cargo.toml",
+      "name": "switched-two-port",
+      "publish": "false",
+      "readme": "recipes/01-power/switched-two-port/README.md",
+      "root": "recipes/01-power/switched-two-port",
+      "target_kinds": [
+        "bin"
+      ]
+    },
+    {
+      "description": "SIM workspace package for physics stored energy recipe.",
+      "generated_readme": false,
+      "manifest": "recipes/02-audit/stored-energy/Cargo.toml",
+      "name": "physics-stored-energy-recipe",
+      "publish": "false",
+      "readme": "recipes/02-audit/stored-energy/README.md",
+      "root": "recipes/02-audit/stored-energy",
+      "target_kinds": [
+        "bin"
+      ]
+    },
+    {
+      "description": "SIM workspace package for physics certified refinement recipe.",
+      "generated_readme": false,
+      "manifest": "recipes/03-proof/certified-refinement/Cargo.toml",
+      "name": "physics-certified-refinement-recipe",
+      "publish": "false",
+      "readme": "recipes/03-proof/certified-refinement/README.md",
+      "root": "recipes/03-proof/certified-refinement",
+      "target_kinds": [
+        "bin"
+      ]
+    },
+    {
+      "description": "SIM workspace package for physics refused selection recipe.",
+      "generated_readme": false,
+      "manifest": "recipes/04-influence/refused-selection/Cargo.toml",
+      "name": "physics-refused-selection-recipe",
+      "publish": "false",
+      "readme": "recipes/04-influence/refused-selection/README.md",
+      "root": "recipes/04-influence/refused-selection",
+      "target_kinds": [
+        "bin"
+      ]
+    },
+    {
+      "description": "SIM workspace package for physics placement sweep recipe.",
+      "generated_readme": false,
+      "manifest": "recipes/05-study/placement-sweep/Cargo.toml",
+      "name": "physics-placement-sweep-recipe",
+      "publish": "false",
+      "readme": "recipes/05-study/placement-sweep/README.md",
+      "root": "recipes/05-study/placement-sweep",
+      "target_kinds": [
+        "bin"
+      ]
+    },
+    {
+      "description": "SIM workspace package for physics sweep to finding recipe.",
+      "generated_readme": false,
+      "manifest": "recipes/06-findings/sweep-to-finding/Cargo.toml",
+      "name": "physics-sweep-to-finding-recipe",
+      "publish": "false",
+      "readme": "recipes/06-findings/sweep-to-finding/README.md",
+      "root": "recipes/06-findings/sweep-to-finding",
+      "target_kinds": [
+        "bin"
+      ]
+    },
+    {
+      "description": "Repository automation for sim-physics.",
+      "generated_readme": false,
+      "manifest": "xtask/Cargo.toml",
+      "name": "xtask",
+      "publish": "false",
+      "readme": "xtask/README.md",
+      "root": "xtask",
+      "target_kinds": [
+        "bin"
+      ]
+    }
+  ]
+}

@@ -2,6 +2,8 @@
 name="boundary-event"
 version="0.1.0"
 edition="2024"
+description = "SIM workspace package for boundary event."
+readme = "README.md"
 publish=false
 [dependencies]
 sim-lib-physics-core={path="../../../crates/sim-lib-physics-core"}
