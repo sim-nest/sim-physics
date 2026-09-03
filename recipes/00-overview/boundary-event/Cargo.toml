@@ -7,4 +7,4 @@ readme = "README.md"
 publish=false
 [dependencies]
 sim-lib-physics-core={path="../../../crates/sim-lib-physics-core"}
-sim-lib-numbers-quantity={ version = "0.1.0" }
+sim-lib-numbers-quantity={ version = "0.2.0" }

@@ -1,6 +1,6 @@
 [package]
 name = "sim-lib-physics-study"
-version = "0.1.0"
+version = "0.2.0"
 edition.workspace = true
 license.workspace = true
 description = "Immutable physics study plans and placement-transparent sweep evidence."
@@ -10,19 +10,19 @@ homepage.workspace = true
 publish = true
 
 [dependencies]
-sim-kernel = { version = "0.3.0" }
-sim-lib-numbers-stats = { version = "0.5.0" }
-sim-lib-physics-influence = { path = "../sim-lib-physics-influence", version = "0.1.0" }
+sim-kernel = { version = "0.4.0" }
+sim-lib-numbers-stats = { version = "0.6.0" }
+sim-lib-physics-influence = { path = "../sim-lib-physics-influence", version = "0.2.0" }
 sha2 = "0.10"
 
 [dev-dependencies]
-sim-incremental-core = { version = "0.2.0" }
-sim-lib-numbers-interval = { version = "0.1.0" }
+sim-incremental-core = { version = "0.3.0" }
+sim-lib-numbers-interval = { version = "0.2.0" }
 sim-lib-numbers-poly = { version = "0.1.0" }
-sim-lib-physics-core = { path = "../sim-lib-physics-core", version = "0.1.0" }
-sim-lib-physics-power = { path = "../sim-lib-physics-power", version = "0.1.0" }
-sim-lib-physics-proof = { path = "../sim-lib-physics-proof", version = "0.1.0" }
-sim-shape = { version = "0.3.0" }
+sim-lib-physics-core = { path = "../sim-lib-physics-core", version = "0.2.0" }
+sim-lib-physics-power = { path = "../sim-lib-physics-power", version = "0.2.0" }
+sim-lib-physics-proof = { path = "../sim-lib-physics-proof", version = "0.2.0" }
+sim-shape = { version = "0.4.0" }
 
 [lints]
 workspace = true
