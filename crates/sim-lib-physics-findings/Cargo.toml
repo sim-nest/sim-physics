@@ -1,6 +1,6 @@
 [package]
 name = "sim-lib-physics-findings"
-version = "0.1.0"
+version = "0.2.0"
 edition.workspace = true
 license.workspace = true
 description = "Immutable branch-preserving histories for physics findings."
@@ -11,9 +11,9 @@ publish = true
 
 [dependencies]
 sha2 = "0.10"
-sim-kernel = { version = "0.3.0" }
-sim-table-core = { version = "0.2.0" }
-sim-storage-port = { version = "0.1.0" }
+sim-kernel = { version = "0.4.0" }
+sim-table-core = { version = "0.3.0" }
+sim-storage-port = { version = "0.2.0" }
 
 [lints]
 workspace = true

@@ -7,5 +7,5 @@ readme = "README.md"
 publish = false
 
 [dependencies]
-sim-kernel = "0.3.0"
+sim-kernel = "0.4.0"
 sim-lib-physics-findings = { path = "../../../crates/sim-lib-physics-findings" }

@@ -930,10 +930,10 @@
     "generated_by": "cargo run -p xtask -- simdoc",
     "generation_timestamp": "2026-08-25T05:11:30+02:00",
     "generator": "xtask repo-contract v1",
-    "git_commit": "b4bd1aee4f16be1e1af77d9850a50b9fb367051c",
+    "git_commit": "a5bc6d078666095adb1366fc86ba8b0347dddf4e",
     "repo": "sim-physics",
     "schema": "sim.provenance.v1",
-    "source_commit": "b4bd1aee4f16be1e1af77d9850a50b9fb367051c",
+    "source_commit": "a5bc6d078666095adb1366fc86ba8b0347dddf4e",
     "source_remote": "https://github.com/sim-nest/sim-physics",
     "validation_commands": [
       "cargo fmt --all --check",
@@ -946,7 +946,7 @@
       "cargo run -p xtask -- validation-matrix --check --repo .",
       "cargo run -p xtask -- crate-catalog --check --repo ."
     ],
-    "workspace_hash": "b3d7f7e4e2a6f129",
+    "workspace_hash": "d288573565a17ca3",
     "workspace_hash_algorithm": "fnv1a64",
     "workspace_hash_input_count": 58,
     "workspace_hash_inputs": [
