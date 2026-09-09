@@ -16,7 +16,7 @@ sim-lib-physics-influence = { path = "../sim-lib-physics-influence", version = "
 sha2 = "0.10"
 
 [dev-dependencies]
-sim-incremental-core = { version = "0.3.0" }
+sim-incremental-core = { version = "0.5.1" }
 sim-lib-numbers-interval = { version = "0.2.0" }
 sim-lib-numbers-poly = { version = "0.1.0" }
 sim-lib-physics-core = { path = "../sim-lib-physics-core", version = "0.2.0" }

@@ -6,5 +6,5 @@ readme = "README.md"
 edition.workspace = true
 publish = false
 [dependencies]
-sim-incremental-core = "0.3.0"
+sim-incremental-core = "0.5.1"
 sim-lib-physics-influence = { path = "../../../crates/sim-lib-physics-influence" }
