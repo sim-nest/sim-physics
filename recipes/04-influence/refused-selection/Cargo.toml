@@ -7,4 +7,4 @@ edition.workspace = true
 publish = false
 [dependencies]
 sim-incremental-core = "0.5.1"
-sim-lib-physics-influence = { path = "../../../crates/sim-lib-physics-influence" }
+sim-lib-physics-influence = { version = "0.2.1", path = "../../../crates/sim-lib-physics-influence" }

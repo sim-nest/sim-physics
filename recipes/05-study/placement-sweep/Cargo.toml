@@ -8,5 +8,5 @@ publish = false
 
 [dependencies]
 sim-kernel = { version = "0.4.0" }
-sim-lib-physics-study = { path = "../../../crates/sim-lib-physics-study" }
+sim-lib-physics-study = { version = "0.2.1", path = "../../../crates/sim-lib-physics-study" }
 sim-shape = { version = "0.4.0" }
