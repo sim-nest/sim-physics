@@ -1,28 +1,41 @@
 {
   "api_docs": "target/doc/",
-  "generated_by": "cargo run -p xtask -- simdoc",
-  "generation_timestamp": "2026-08-25T05:11:30+02:00",
+  "execution": {
+    "executable": {
+      "lock_sha256": "de3cf584352514646909797b8454326e8ba4d3d90bf87ed7c3592ae971073678",
+      "package": "simdoc",
+      "source_sha256": "395d780eb6f38d1b0b49368a71b96771c70ae4bc3aac3554f6c592195ba104d3",
+      "version": "0.1.0"
+    },
+    "operation": "repo-contract --repo .",
+    "resolver": null,
+    "toolchain": {
+      "cargo": {
+        "commit_hash": "30a34c6821b57de0aaec83a901aca39f88f6778c",
+        "release": "1.96.0"
+      },
+      "rustc": {
+        "commit_hash": "ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96",
+        "release": "1.96.0"
+      }
+    }
+  },
+  "generation_timestamp": "2026-09-09T14:09:25+02:00",
   "generator": "xtask repo-contract v1",
-  "git_commit": "444b4c2b28da7d1a19c7f177b92f4b27a027f6a5",
+  "git_commit": "c1ed8faab6b61672adbd2e97ec824e43c9cf7c95",
+  "regeneration_command": "cargo run -p xtask -- simdoc",
   "repo": "sim-physics",
   "schema": "sim.provenance.v1",
-  "source_commit": "444b4c2b28da7d1a19c7f177b92f4b27a027f6a5",
+  "source_commit": "c1ed8faab6b61672adbd2e97ec824e43c9cf7c95",
   "source_remote": "https://github.com/sim-nest/sim-physics",
   "validation_commands": [
-    "cargo fmt --all --check",
-    "cargo test",
-    "cargo clippy --all-targets -- -D warnings",
-    "cargo doc --no-deps",
-    "cargo run -p xtask -- simdoc --check",
-    "cargo run -p xtask -- check-file-sizes",
-    "cargo run -p xtask -- repo-contract --check --repo .",
-    "cargo run -p xtask -- validation-matrix --check --repo .",
-    "cargo run -p xtask -- crate-catalog --check --repo ."
+    "cargo run -p xtask -- simdoc --check"
   ],
-  "workspace_hash": "1517e052a53f015a",
+  "workspace_hash": "eab21a0591c20584",
   "workspace_hash_algorithm": "fnv1a64",
-  "workspace_hash_input_count": 58,
+  "workspace_hash_input_count": 67,
   "workspace_hash_inputs": [
+    ".github/workflows/ci.yml",
     "Cargo.toml",
     "crates/sim-lib-physics-adapter/Cargo.toml",
     "crates/sim-lib-physics-adapter/recipes/book.toml",
@@ -67,19 +80,27 @@
     "features.toml",
     "recipes/00-overview/boundary-event/Cargo.toml",
     "recipes/00-overview/boundary-event/recipe.toml",
+    "recipes/00-overview/boundary-event/src/main.rs",
     "recipes/01-power/switched-two-port/Cargo.toml",
     "recipes/01-power/switched-two-port/recipe.toml",
+    "recipes/01-power/switched-two-port/src/main.rs",
     "recipes/02-audit/stored-energy/Cargo.toml",
     "recipes/02-audit/stored-energy/recipe.toml",
+    "recipes/02-audit/stored-energy/src/main.rs",
     "recipes/03-proof/certified-refinement/Cargo.toml",
     "recipes/03-proof/certified-refinement/recipe.toml",
+    "recipes/03-proof/certified-refinement/src/main.rs",
     "recipes/04-influence/refused-selection/Cargo.toml",
     "recipes/04-influence/refused-selection/recipe.toml",
+    "recipes/04-influence/refused-selection/src/main.rs",
     "recipes/05-study/placement-sweep/Cargo.toml",
     "recipes/05-study/placement-sweep/recipe.toml",
+    "recipes/05-study/placement-sweep/src/main.rs",
     "recipes/06-findings/sweep-to-finding/Cargo.toml",
     "recipes/06-findings/sweep-to-finding/recipe.toml",
+    "recipes/06-findings/sweep-to-finding/src/main.rs",
     "recipes/book.toml",
-    "xtask/Cargo.toml"
+    "xtask/Cargo.toml",
+    "xtask/src/main.rs"
   ]
 }

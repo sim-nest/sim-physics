@@ -133,7 +133,7 @@ owner = "crate/sim-lib-physics-proof"
 audiences = ["code", "framework", "user"]
 guidance = "Compose physics audit evidence with sim-numbers interval, extended-precision, and method layers. Keep all six refinement axes and threshold lanes explicit; refinement spreads are estimates and cannot certify a verdict."
 claims_anchors = ["anchor/crate/physics-certified-refinement-recipe", "anchor/crate/sim-lib-physics-proof"]
-claims_specimens = ["recipe/sim-physics/03-proof/certified-refinement"]
+claims_specimens = ["spec-test/sim-physics/crates/sim-lib-physics-proof/tests/proof"]
 composes = ["crate/sim-lib-physics-audit", "crate/sim-lib-numbers-interval", "crate/sim-lib-numbers-extended", "crate/sim-lib-numbers-method"]
 [[route]]
 id = "route/certify-physics-refinement"
@@ -149,7 +149,7 @@ owner = "crate/sim-lib-physics-influence"
 audiences = ["code", "framework", "user"]
 guidance = "Compose the one generic sim-incremental-core dataflow engine. Declare every study operation and dependency, treat unchecked native transforms as Unknown, and admit a SelectionInput only from the resulting clean completion proof. There is no capability override."
 claims_anchors = ["anchor/crate/physics-refused-selection-recipe", "anchor/crate/sim-lib-physics-influence"]
-claims_specimens = ["recipe/sim-physics/04-influence/refused-selection"]
+claims_specimens = ["spec-test/sim-physics/crates/sim-lib-physics-influence/tests/influence"]
 composes = ["crate/sim-incremental-core", "crate/sim-kernel"]
 
 [[route]]
@@ -165,7 +165,7 @@ summary = "Review semantic sweep plans before execution and retain sampling, par
 owner = "crate/sim-lib-physics-study"
 audiences = ["code", "framework", "user"]
 guidance = "Use StudyPlan for parameter studies that must bind model and content identity, boundary/event graph, initial state, methods, refinements, semantic quantity Shapes, exact boundary cases, statistical partitions, outputs, limits, seed, policies, and placement before execution. Grid, Latin, and Sobol designs compose the canonical stats evidence. Submit independent points through realize_sweep and EvalFabric; do not add a scheduler, executor, transport, site, or Tensor fork. Require SelectionInput for selection and attach energy Observations only after choosing. Preserve refused, interrupted, and unknown outcomes without inferring retry safety from lost contact."
-claims_specimens = ["recipe/sim-physics/05-study/placement-sweep"]
+claims_specimens = ["spec-test/sim-physics/crates/sim-lib-physics-study/tests/study"]
 claims_anchors = ["anchor/crate/physics-placement-sweep-recipe"]
 composes = ["crate/sim-lib-numbers-stats", "feature/sim-physics/no-energy-selection", "crate/sim-kernel"]
 
@@ -183,7 +183,7 @@ owner = "crate/sim-lib-physics-findings"
 audiences = ["code", "framework", "user"]
 guidance = "Compose kernel ContentId and Claim with sim-table-core validated paths and an injected sim-storage HostDirPort. Append typed successors with new evidence; reconcile competing heads explicitly. Do not use a ledger, SQL, filesystem paths, mutable records, or last-writer-wins."
 claims_anchors = ["anchor/crate/physics-sweep-to-finding-recipe", "anchor/crate/sim-lib-physics-findings"]
-claims_specimens = ["recipe/sim-physics/06-findings/sweep-to-finding"]
+claims_specimens = ["spec-test/sim-physics/crates/sim-lib-physics-findings/tests/history"]
 composes = ["crate/sim-kernel", "crate/sim-table-core", "crate/sim-storage-port"]
 
 [[route]]
